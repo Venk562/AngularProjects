@@ -1,0 +1,134 @@
+<div class="container mt-5">
+    <h3 class="text-primary fw-bold">Popular things to do</h3><br><br>
+    <div class="btn-group btn-group-toggle mb-3" data-toggle="buttons">
+        <button class="btn btn-outline-light active">Singapore</button>
+        <button class="btn btn-outline-light text_color">Malaysia</button>
+        <button class="btn btn-outline-light text_color">Thailand</button>
+        <button class="btn btn-outline-light text_color">Dubai</button>
+        <button class="btn btn-outline-light text_color">Srilanka</button>
+    </div><br><br>
+
+    <div class="row d-flex flex-nowrap overflow-auto">
+        <div class="col-md-4 col-lg-3" *ngFor="let item of popularThings">
+            <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                <div class="position-relative">
+                    <img [routerLink]="[item.route, item.id]" [src]="item.image" class="card-img-top img-fluid" [alt]="item.title" loading="lazy">
+                    <i class="bi bi-bookmark position-absolute bottom-0 end-0 m-3 fs-3 text-white"></i>
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[item.title] ? 'normal' : 'nowrap',
+                                   'overflow': showFullTitle[item.title] ? 'visible' : 'hidden',
+                                   'text-overflow': showFullTitle[item.title] ? 'unset' : 'ellipsis'}">
+                        {{ item.title }}
+                    </h5>
+
+                    <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitle(item.title)"
+                        class="btn btn-link text-decoration-none p-0">
+                        Read More
+                    </button>
+                    <button *ngIf="showFullTitle[item.title]" (click)="toggleTitle(item.title)"
+                        class="btn btn-link text-decoration-none p-0">
+                        Read Less
+                    </button>
+
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="badge rating-badge d-flex align-items-center">
+                            ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
+                        </span>
+                    </div>
+                    <hr>
+
+                    <div class="d-flex justify-content-start align-items-center mt-2">
+                        <p class="mb-0 text-muted">From</p>
+                        <p class="fw-bold fs-5 ms-2 mb-0">SGD {{ item.price }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="row d-flex flex-nowrap overflow-auto">
+        <div class="col-md-4 col-lg-3" *ngFor="let item of popularThingsSecond">
+            <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                <div class="position-relative">
+                    <img [routerLink]="[item.route, item.id]" [src]="item.image" class="card-img-top img-fluid" [alt]="item.title" loading="lazy">
+                    <i class="bi bi-bookmark position-absolute bottom-0 end-0 m-3 fs-3 text-white"></i>
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[item.title] ? 'normal' : 'nowrap',
+                                   'overflow': showFullTitle[item.title] ? 'visible' : 'hidden',
+                                   'text-overflow': showFullTitle[item.title] ? 'unset' : 'ellipsis'}">
+                        {{ item.title }}
+                    </h5>
+
+                    <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitle(item.title)"
+                        class="btn btn-link text-decoration-none p-0">
+                        Read More
+                    </button>
+                    <button *ngIf="showFullTitle[item.title]" (click)="toggleTitle(item.title)"
+                        class="btn btn-link text-decoration-none p-0">
+                        Read Less
+                    </button>
+
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="badge rating-badge d-flex align-items-center">
+                            ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
+                        </span>
+                    </div>
+                    <hr>
+
+                    <div class="d-flex justify-content-start align-items-center mt-2">
+                        <p class="mb-0 text-muted">From</p>
+                        <p class="fw-bold fs-5 ms-2 mb-0">SGD {{ item.price }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="row d-flex flex-nowrap overflow-auto">
+        <div class="col-md-4 col-lg-3" *ngFor="let item of popularThingsThird">
+            <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+                <div class="position-relative">
+                    <img [routerLink]="[item.route, item.id]" [src]="item.image" class="card-img-top img-fluid" [alt]="item.title" loading="lazy">
+                    <i class="bi bi-bookmark position-absolute bottom-0 end-0 m-3 fs-3 text-white"></i>
+                </div>
+
+                <div class="card-body">
+                    <h5 class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[item.title] ? 'normal' : 'nowrap',
+                                   'overflow': showFullTitle[item.title] ? 'visible' : 'hidden',
+                                   'text-overflow': showFullTitle[item.title] ? 'unset' : 'ellipsis'}">
+                        {{ item.title }}
+                    </h5>
+
+                    <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitle(item.title)"
+                        class="btn btn-link text-decoration-none p-0">
+                        Read More
+                    </button>
+                    <button *ngIf="showFullTitle[item.title]" (click)="toggleTitle(item.title)"
+                        class="btn btn-link text-decoration-none p-0">
+                        Read Less
+                    </button>
+
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                        <span class="badge rating-badge d-flex align-items-center">
+                            ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
+                        </span>
+                    </div>
+                    <hr>
+
+                    <div class="d-flex justify-content-start align-items-center mt-2">
+                        <p class="mb-0 text-muted">From</p>
+                        <p class="fw-bold fs-5 ms-2 mb-0">SGD {{ item.price }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-center align-items-center text-center text-white mt-4">
+        <button [routerLink]="'/activities'" class="btn-view btn btn-primary btn-lg ">View All Activities</button>
+    </div>
+</div>

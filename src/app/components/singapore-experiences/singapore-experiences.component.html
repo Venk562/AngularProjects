@@ -1,0 +1,71 @@
+
+<section class="hero-banner text-white text-center d-flex align-items-center justify-content-center" >
+    <div  id="experiences" class="container">
+      <h1 class="display-4 fw-bold">Unforgettable Experiences in Singapore</h1>
+      <p class="lead">Explore top-rated activities, hidden gems, and cultural adventures.</p>
+      <button class="btn btn-warning btn-lg mt-3" (click)="scrollToSection('experiences')">Discover More</button>
+
+    </div>
+  </section>
+
+
+  <section class="intro-section py-5 bg-light text-center">
+    <div class="container">
+      <h2 class="mb-3">What Makes Singapore Unique?</h2>
+      <p class="lead">From rooftop sky parks to underwater aquariums and vibrant night markets, Singapore is packed with world-class experiences for every kind of traveler.</p>
+    </div>
+  </section>
+
+
+  <section class="container py-5">
+    <h2 class="text-center mb-5">Top Experiences in Singapore</h2>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-4" *ngFor="let experience of experiences">
+        <div class="card h-100 shadow-sm">
+          <div class="overflow-hidden" style="height: 200px;">
+            <img [src]="experience.image" [alt]="experience.name" class="card-img-top w-100 h-100" style="object-fit: cover;">
+          </div>
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">{{ experience.name }}</h5>
+            <p class="card-text text-muted">{{ experience.description }}</p>
+            <p class="rating text-warning mb-1">⭐ {{ experience.rating }}</p>
+            <p class="price text-primary fw-bold mb-3">{{ experience.price }}</p>
+            <button class="btn btn-primary mt-auto">Book Experience</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="why-singapore py-5 text-white" style="background-color: #2c3e50;">
+    <div class="container text-center">
+      <h2 class="mb-4">Why Travel to Singapore?</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <i class="bi bi-globe fs-1 mb-2"></i>
+          <h5>Cultural Diversity</h5>
+          <p>Explore Chinese temples, Malay heritage, Indian markets, and modern marvels all in one place.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-lightning fs-1 mb-2"></i>
+          <h5>Fast & Safe</h5>
+          <p>Modern infrastructure, efficient transport, and world-class cleanliness and safety.</p>
+        </div>
+        <div class="col-md-4">
+          <i class="bi bi-star fs-1 mb-2"></i>
+          <h5>Unique Attractions</h5>
+          <p>From the Marina Bay SkyPark to Sentosa Island — adventure, shopping, and nature await.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <section class="cta-section py-5 bg-warning text-center">
+    <div class="container">
+      <h2 class="mb-3">Ready for Your Next Adventure?</h2>
+      <p class="lead mb-4">Book the best experiences in Singapore now and create memories that last forever.</p>
+      <button class="btn btn-dark btn-lg">Browse All Experiences</button>
+    </div>
+  </section> -->

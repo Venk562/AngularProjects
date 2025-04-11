@@ -1,0 +1,75 @@
+.card {
+    border-radius: 20px !important;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-img-top {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.prev-btn, .next-btn {
+    width: 45px;
+    height: 45px;
+    background-color: #4B0082;
+    color: white;
+    border: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s ease;
+  }
+
+  .next-btn {
+    background-color: #E6D8F0;
+    color: #4B0082;
+  }
+
+  .prev-btn:hover, .next-btn:hover {
+    background-color: #5A0092;
+    color: white;
+  }
+
+  .rating-badge {
+    background-color: #5C1AC3; 
+    color: white;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  .separator-line {
+    width: 1px;
+    height: 20px;
+    background-color: #ccc;
+    margin: 0 8px;
+    display: inline-block;
+  }
+
+  .reviews {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+
+  .rating-divider {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px 0;
+  }
+
+  .card-title {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

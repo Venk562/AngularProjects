@@ -1,0 +1,13 @@
+/* In your component's CSS */
+.gallery-img-wrapper {
+    height: 200px;
+    overflow: hidden;
+    border-radius: 8px;
+  }
+
+  .gallery-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  

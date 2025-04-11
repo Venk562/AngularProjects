@@ -1,0 +1,125 @@
+/* .hero-section {
+    background-image: url('/assets/images/Skyline Luge Sentosa Tickets gal-3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+} */
+
+.hero-section {
+  background-image: url('/assets/images/Singapore Flyer Tickets Three.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  animation: bgAnimation 30s ease-in-out infinite alternate;
+}
+
+/* Keyframes for zoom and slight pan effect */
+@keyframes bgAnimation {
+  0% {
+    background-size: 100%;
+    background-position: center;
+  }
+  50% {
+    background-size: 110%;
+    background-position: center center;
+  }
+  100% {
+    background-size: 120%;
+    background-position: top center;
+  }
+}
+
+
+/* Slide through 4 images */
+/* @keyframes slideshow {
+  0% {
+    background-image: url('/assets/images/attraction-singapore-6.jpg');
+    background-size: 100%;
+  }
+  25% {
+    background-image: url('/assets/images/best-attractions-in-singapore.jpg');
+    background-size: 105%;
+  }
+  50% {
+    background-image: url('/assets/images/Sentosa_island_tour.jpg');
+    background-size: 110%;
+  }
+  75% {
+    background-image: url('/assets/images/Singapore River Cruise-4.jpg');
+    background-size: 115%;
+  }
+  100% {
+    background-image: url('/assets/images/Singapore Flyer Tickets Three.jpg');
+    background-size: 120%;
+  }
+} */
+
+
+
+
+.bg-purple {
+    background-color: #4b0082;
+}
+
+.text-purple {
+    color: #4b0082;
+}
+
+.search-bar {
+    max-width: 400px;
+    margin: 0 auto;
+    border-radius: 30px;
+    overflow: hidden;
+}
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+  .bg{
+    background-color: #ECE6F1;
+  }
+
+
+.card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card:hover {
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .card img {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .rating-badge {
+    background-color: #5C1AC3;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 8px;
+    font-weight: bold;
+  }
+
+  .bi-bookmark {
+    font-size: 2rem;
+    color:white !important;
+
+  }
+
+  body, html {
+    overflow-x: hidden;
+  }
+
+/* html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; } */

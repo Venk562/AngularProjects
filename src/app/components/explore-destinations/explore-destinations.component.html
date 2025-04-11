@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <h3 class="text-primary fw-bold mb-5">Explore Our Destination</h3>
+  <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 g-4">
+    <div class="col" *ngFor="let item of ExploreItems">
+      <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+
+        <div class="position-relative">
+          <img [routerLink]="[item.route, item.id]"  [src]="item.image" class="card-img-top" [alt]="item.title" loading="lazy">
+        </div>
+        <!-- Text Section -->
+        <div class="card-body text-center">
+          <!-- <h5 class="fw-semibold">{{ item.title }}</h5> -->
+          <div class="d-flex justify-content-center align-items-center gap-1 text-muted">
+            <i class="bi bi-geo-alt"></i>
+            <span>{{ item.location }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

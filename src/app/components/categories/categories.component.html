@@ -1,0 +1,13 @@
+<div class="container-fluid d-flex justify-content-center align-items-center mt-5 mb-5 bg-light-purple" >
+    <div class="row row-cols-1 row-cols-md-3 row-cols-lg-5 gx-4 gy-3">
+        <div class="col d-flex flex-column  align-items-center mt-3" *ngFor="let category of categories">
+            <div class="icon-container " style="cursor: pointer;">
+                <img [routerLink]="[category.route, category.id]" [src]="category.image" class="icon-img" [alt]="category.name" loading="lazy">
+            </div>
+            <p class="category-label">{{ category.name }}</p>
+        </div>
+    </div>
+</div>
+
+
+

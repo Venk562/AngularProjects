@@ -1,0 +1,59 @@
+.card img {
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .card {
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+  }
+
+  .hero-section {
+    min-height: 400px;
+  }
+  .carousel-item blockquote {
+    font-size: 1.2rem;
+  }
+
+/* btn styles */
+
+.btn-group .btn {
+  border: 2px solid #E2DFD2;
+}
+
+.btn-group .btn.active {
+  background-color: #44107B;
+  color: white;
+  border: 2px solid #44107B;
+
+}
+
+
+.btn-group .btn:hover:not(.active) {
+  background-color: #44107B;
+  color: white;
+  border: 2px solid #44107B;
+
+}
+.text_color
+{
+  color:#44107B;
+}
+
+.btn-group .btn:first-child {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.btn-group .btn:last-child {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+/* .position-relative .position-absolute {
+  z-index: 2;
+} */
+

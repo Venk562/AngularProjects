@@ -1,0 +1,127 @@
+/* Main section spacing and typography */
+#singapore-zoo {
+    font-family: 'Segoe UI', sans-serif;
+    color: #333;
+  }
+
+  #singapore-zoo h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #28a745;
+    margin-bottom: 1rem;
+  }
+
+  #singapore-zoo h4, h5 {
+    color: #2c3e50;
+    font-weight: 600;
+  }
+
+  #singapore-zoo p {
+    line-height: 1.6;
+  }
+
+  /* Hero Image */
+  /* #singapore-zoo img.img-fluid.w-100 {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 1rem;
+  } */
+
+  /* About Section List */
+  #singapore-zoo ul {
+    padding-left: 1rem;
+    list-style-type: disc;
+  }
+
+  #singapore-zoo ul li {
+    margin-bottom: 0.5rem;
+  }
+
+  /* Cards for Animals */
+  #singapore-zoo .card {
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.3) !important;
+  }
+
+  #singapore-zoo .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  #singapore-zoo .card-img-top {
+    height: 180px;
+    object-fit: cover;
+  }
+
+  /* Visitor Info Section */
+  #singapore-zoo .bg-light {
+    background-color: #f9f9f9 !important;
+    border-left: 5px solid #28a745;
+  }
+
+  /* Call to Action */
+  #singapore-zoo .btn-success {
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 40px;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.3);
+    transition: all 0.3s ease;
+  }
+
+  #singapore-zoo .btn-success:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+
+  .card img {
+    border-top-left-radius: 0 !important;
+    border-top-right-radius: 0 !important;
+  }
+
+  /* Featured Animals Section */
+#singapore-zoo .card {
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e0e0e0;
+    background-color: #fff;
+  }
+
+  #singapore-zoo .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+  }
+
+  /* Animal Image */
+  #singapore-zoo .card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+  }
+
+  #singapore-zoo .card:hover .card-img-top {
+    transform: scale(1.05);
+  }
+
+  /* Card Body */
+  #singapore-zoo .card-body {
+    padding: 1rem;
+  }
+
+  /* Title */
+  #singapore-zoo .card-title {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Description */
+  #singapore-zoo .card-text {
+    font-size: 0.875rem;
+    color: #6c757d;
+    line-height: 1.5;
+  }
+  

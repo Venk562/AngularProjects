@@ -1,0 +1,173 @@
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-md-8">
+            <h2 class="fw-bold">{{ activity.title }}</h2>
+            <div class="d-flex align-items-center text-muted">
+                <span class="text-warning fs-5">⭐ {{ activity.rating }}</span>
+                <span class="ms-2">{{ activity.reviews }} reviews</span>
+                <span class="ms-2">• {{ activity.booked }}+ booked</span>
+                <span class="ms-2">• {{ activity.location }}</span>
+            </div>
+
+            <div class="mt-3">
+                <img [src]="activity.image" class="img-fluid rounded-4 shadow" [alt]="activity.title">
+            </div>
+        </div>
+
+        <div class="col-md-4 mt-5">
+            <div class="p-3 border rounded-4 shadow-sm bg-light">
+                <p class="text-white bg-purple p-2 rounded text-center fw-bold">Login for an extra 10% off!</p>
+                <p class="fw-bold mb-1">From:</p>
+                <p class="fs-4 fw-bold">SGD {{ activity.price }}</p>
+                <button class="btn btn-primary w-100">Book Now</button>
+            </div>
+
+            <div class="p-3 mt-3 border rounded-4 bg-light">
+                <h5 class="fw-bold">Why Us?</h5>
+                <ul class="list-unstyled">
+                    <li>✅ Trusted by millions of travellers</li>
+                    <li>✅ Best price guarantee promise</li>
+                    <li>✅ Choose from 200,000+ activities</li>
+                    <li>✅ Earn exciting offers with every booking</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="dates-container mt-5">
+        <h4 class="title">Next available dates</h4>
+        <div class="dates-wrapper d-flex justify-content-center">
+            <div *ngFor="let date of dates" class="date-box">
+                <span class="day-label">{{ date.label }}</span>
+                <span class="date-value">{{ date.day }}</span>
+            </div>
+            <div class="date-box calendar-icon">
+                <i class="bi bi-calendar"></i>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="fw-bold" style="color:#44107B;">Highlights</h2><br>
+    <!-- <p  [innerHTML]="highlights"></p><br> -->
+
+    <p class="fw-bold fs-3 text-secondary">{{ truncatedHighlights }}</p>
+
+    <button (click)="toggleTitle()" class="btn btn-link text-decoration-underline fs-3 p-0">
+        {{ showFullHighlights ? 'Read Less' : 'Read More' }}
+    </button>
+
+    <!-- <div class="row">
+        <div class="col-md-3"
+            *ngFor="let item of (showAllImages ? skylineluge : skylineluge.slice(0, 4)); let last = last">
+            <div class="card h-100 shadow-sm border-2 d-flex flex-column">
+                <img [src]="item.image" class="card-img-top img-fluid fixed-image" loading="lazy">
+            </div>
+        </div>
+
+
+        <div class="col-md-3" *ngIf="skylineluge.length > 4 && !showAllImages">
+            <div class="card h-100 shadow-sm border-2 d-flex flex-column view-all-card" (click)="toggleViewAll()">
+                <div class="view-all-overlay">
+                    <span>View All</span>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <!-- <div *ngIf="showAllImages" class="carousel-container">
+        <button class="close-btn" (click)="toggleViewAll()">✖</button>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let item of skylineluge; let i = index" [class.active]="i === 0">
+                    <img [src]="item.image" class="d-block w-100 img-fluid">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div> -->
+
+    <div class="row mt-5">
+        <div class="col-md-3" *ngFor="let item of displayedImages; let i = index">
+            <div class="card h-100 shadow-sm border-2 d-flex flex-column position-relative">
+                <img [src]="item.image" class="card-img-top img-fluid fixed-image" loading="lazy">
+
+
+                <button *ngIf="i === 3 && skylineluge.length > 4" class="view-all-btn" (click)="toggleViewAll()">View
+                    All</button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="showAllImages" class="carousel-container">
+        <button class="close-btn" (click)="toggleViewAll()">✖</button>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item" *ngFor="let item of skylineluge; let i = index" [class.active]="i === 0">
+                    <img [src]="item.image" class="d-block w-100 img-fluid">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="container mt-5" style="cursor:pointer;">
+        <div class="d-flex justify-content-between align-items-center">
+            <h3 class="text-primary fw-bold mb-5">Recommended for you</h3>
+            <div class="d-flex mb-5 gap-2">
+                <button class="btn rounded-circle shadow-lg prev-btn me-2" type="button"
+                    data-bs-target="#recommendedCarousel" data-bs-slide="prev">
+                    <i class="bi bi-caret-left"></i><i style="margin-left: -10px;" class="bi bi-caret-left"></i>
+                </button>
+                <button class="btn rounded-circle shadow-lg next-btn" type="button"
+                    data-bs-target="#recommendedCarousel" data-bs-slide="next">
+                    <i class="bi bi-caret-right"></i><i style="margin-left: -10px;" class="bi bi-caret-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <div id="recommendedCarousel" class="carousel slide " data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div *ngFor="let group of chunkedRecommendedItems(); let i = index" class="carousel-item"
+                    [class.active]="i === 0">
+                    <div class="row">
+                        <div class="col-md-3" *ngFor="let item of filteredRecommendedItems">
+                            <div class="card h-100 shadow-sm border-2 d-flex flex-column">
+                              <img [routerLink]="[item.route, item.id]" [src]="item.image" class="card-img-top"
+                                [alt]="item.title" loading="lazy">
+                              <div class="card-body d-flex flex-column">
+                                <h5 class="card-title">{{ item.title }}</h5>
+                                <div class="d-flex align-items-center">
+                                  <span class="badge bg-warning text-dark me-2">
+                                    ⭐ {{ item.rating }} ({{ item.reviews }})
+                                  </span>
+                                  <i class="bi bi-bookmark"></i>
+                                </div>
+                                <p class="mt-2 mb-0 text-muted">From</p>
+                                <p class="fw-bold">SGD {{ item.price }}</p>
+                              </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

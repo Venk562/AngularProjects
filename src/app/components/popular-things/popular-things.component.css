@@ -1,0 +1,56 @@
+.btn-group .btn {
+    border: 2px solid #E2DFD2;
+}
+
+.btn-group .btn.active {
+    background-color: #44107B;
+    color: white;
+    border: 2px solid #44107B;
+
+}
+
+
+.btn-group .btn:hover:not(.active) {
+    background-color: #44107B;
+    color: white;
+    border: 2px solid #44107B;
+
+}
+.text_color
+{
+    color:#44107B;
+}
+
+.btn-group .btn:first-child {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.btn-group .btn:last-child {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.fixed-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.card {
+    border-radius: 20px !important;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.3) !important;
+}
+
+.card-img-top {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.btn-view{
+    background-color: #44107B;
+    color: white;
+    border: 2px solid #44107B;
+}
+
+
