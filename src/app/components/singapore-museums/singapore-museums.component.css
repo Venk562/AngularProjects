@@ -97,3 +97,24 @@
 .carousel {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
+
+.card {
+    border: 1px solid grey !important;
+}
+
+.tour-image {
+    transition: transform 0.3s ease;
+}
+
+.card:hover .tour-image {
+    transform: scale(1.1);
+}
+
+p{
+    text-align: justify;
+}
+
+.img-fluid {
+    max-width: 110%;
+    height: auto;
+}

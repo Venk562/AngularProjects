@@ -33,3 +33,14 @@
   .card-body .bi-geo-alt {
     color: #6c757d;
   }
+
+  .custom-hover-card {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .custom-hover-card:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 1, 1);
+    transform: translateY(-5px);
+  }
+
+

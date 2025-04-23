@@ -124,4 +124,8 @@
     color: #6c757d;
     line-height: 1.5;
   }
-  
+
+  .width-style{
+    max-width: 100% !important;
+
+  }

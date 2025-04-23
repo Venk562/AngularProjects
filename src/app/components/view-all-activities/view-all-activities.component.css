@@ -55,7 +55,7 @@
 }
 
 .hero-section {
-    background-image: url('/assets/images/harry potter visions of magic.jpg');
+    background-image: url('/assets/images/best-singapore-1.avif');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -121,5 +121,9 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.highlight{
+    text-align: justify !important;
 }
 

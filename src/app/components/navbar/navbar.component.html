@@ -1,8 +1,11 @@
 <nav class="navbar navbar-expand-lg bg-purple w-100 py-3 px-4">
   <div class="container-fluid px-0">
     <a class="navbar-brand text-white fw-bold" href="#">
-      <img src="/assets/images/Krystal_travels.JPG" alt="Krystal Travels Logo" height="50">
+      <img class="logo-img" src="/assets/images/Cloud Tickets LOGO (2).png" alt="Krystal Travels Logo" title="Cloud Tickets">
     </a>
+
+
+
     <div *ngIf="!isActivitiesPage">
       <div class="d-flex align-items-center gap-3">
         <div class="position-relative">
@@ -10,16 +13,29 @@
           <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">2</span>
         </div>
         <div class="position-relative">
-          <i class="bi bi-bookmark text-white fs-4"></i>
-          <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">2</span>
+          <!-- <i class="bi bi-bookmark text-white fs-4"></i>
+          <span class="badge bg-danger position-absolute top-0 start-100 translate-middle"> {{ savedCount }}
+          </span> -->
+
+
+          <!-- <a  class="position-relative text-decoration-none"> -->
+            <i [routerLink]="['/wish-list']" class="bi bi-bookmark text-white fs-4" style="cursor: pointer;"></i>
+            <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">
+              {{ savedCount }}
+            </span>
+          <!-- </a> -->
+
         </div>
-        <button class="btn btn-light fw-bold text-purple d-flex align-items-center gap-2 rounded-pill" ><i class="bi bi-person fs-4"></i>Login</button>
+        <!-- <button class="btn btn-light fw-bold text-purple d-flex align-items-center gap-2 rounded-pill"><i
+            class="bi bi-person fs-4"></i>Login</button> -->
       </div>
     </div>
     <div *ngIf="isActivitiesPage">
-      <button routerLink="/" class="btn btn-light fw-bold text-purple">
-        <i class="bi bi-x-lg me-2"></i> Back
+      <button routerLink="/" class="btn btn-light fw-bold text-purple d-flex align-items-center gap-2">
+        <i class="bi bi-arrow-left fw-bolder fs-4"></i>
+        <span>Back</span>
       </button>
+
     </div>
   </div>
 </nav>

@@ -7,34 +7,48 @@ import { Component } from '@angular/core';
   styleUrl: './singapore-museums.component.css'
 })
 export class SingaporeMuseumsComponent {
+
+  showFullTitle: { [key: string]: boolean } = {};
   museums = [
     {
-      name: 'National Museum of Singapore',
+      id:1,
+      title: 'National Museum of Singapore',
       image: '/assets/images/Singapore-museums-1.jpg',
       description: 'The oldest museum in Singapore with rich history exhibitions.',
       rating: 4.7,
-      price: 'Free Entry'
+      reviews: 224,
+      price: 'Free Entry',
+      route:'/'
     },
     {
-      name: 'ArtScience Museum',
+      id:2,
+      title: 'ArtScience Museum',
       image: '/assets/images/art-science-museum-singapore-2.jpg',
       description: 'A futuristic space exploring the fusion of art and science.',
       rating: 4.6,
-      price: '$19'
+      reviews: 224,
+      price: '1585',
+      route:'/'
     },
     {
-      name: 'Asian Civilisations Museum',
+      id:3,
+      title: 'Asian Civilisations Museum',
       image: '/assets/images/Singapore_Asian_Civilisations_Museum.webp',
       description: 'Showcases the diverse heritage of Asia, especially Singapore.',
       rating: 4.5,
-      price: '$12'
+      reviews: 224,
+      price: '1000',
+      route:'/'
     },
     {
-      name: 'Peranakan Museum',
+      id:4,
+      title: 'Peranakan Museum',
       image: '/assets/images/Peranakan-Museum-6.jpg',
       description: 'Dedicated to Peranakan culture and traditions.',
       rating: 4.4,
-      price: '$8'
+      reviews: 224,
+      price: '670',
+      route:'/'
     }
   ];
 
@@ -57,10 +71,17 @@ export class SingaporeMuseumsComponent {
     },
     {
       name: 'Lee Kong Chian Natural History Museum',
-      image: '/assets/images/museum1.jpg',
+      image: '/assets/images/Lee Kong Chian Natural History Museum-4.webp',
+    },
+    {
+      name: 'Peranakan-Museum Singapore',
+      image: '/assets/images/Peranakan-Museum-1.webp',
     }
   ];
 
-
+  toggleTitle(title: string, event: Event): void {
+    event.stopPropagation(); // Prevents routing trigger
+    this.showFullTitle[title] = !this.showFullTitle[title];
+  }
 
 }

@@ -10,12 +10,12 @@
 }
 
 
-.btn-group .btn:hover:not(.active) {
+/* .btn-group .btn:hover:not(.active) {
     background-color: #44107B;
     color: white;
     border: 2px solid #44107B;
 
-}
+} */
 .text_color
 {
     color:#44107B;
@@ -47,10 +47,10 @@
     border-top-right-radius: 20px;
 }
 
-.btn-view{
+/* .btn-view{
     background-color: #44107B;
     color: white;
     border: 2px solid #44107B;
-}
+} */
 
 

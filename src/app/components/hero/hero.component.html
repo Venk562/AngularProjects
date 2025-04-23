@@ -13,21 +13,37 @@
 </div> -->
 
 <div class="hero-section d-flex flex-column justify-content-center align-items-center text-center h-100">
-  <!-- Background Slides -->
+
   <div class="hero-slide"></div>
   <div class="hero-slide"></div>
   <div class="hero-slide"></div>
 
-  <!-- Your actual content -->
   <div class="text-white mt-5 position-relative">
     <h1 class="fw-bold display-5">
       Find what makes you happy <br> anytime, anywhere
     </h1>
-    <div class="input-group mt-4 search-bar">
+    <!-- <div class="input-group mt-4 search-bar">
       <span class="input-group-text bg-white">
         <i class="bi bi-search text-muted"></i>
       </span>
-      <input type="text" class="form-control" placeholder="Destination, attraction or activity">
-    </div>
+      <input type="search" class="form-control" placeholder="Destination, attraction or activity">
+    </div> -->
+    <form class="mt-4">
+      <div class="input-group search-bar">
+        <span class="input-group-text bg-white">
+          <i class="bi bi-search text-muted"></i>
+        </span>
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Destination, attraction or activity"
+          [(ngModel)]="searchQuery"
+          (ngModelChange)="onSearch()"
+          name="search"
+        />
+      </div>
+    </form>
+
+
   </div>
 </div>

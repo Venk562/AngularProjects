@@ -1,4 +1,4 @@
-<!-- HERO SECTION -->
+
 <div class="position-relative text-white text-center"
     style="height: 80vh; background: url('/assets/images/Sentosa_island.jpg') center/cover no-repeat;">
     <div
@@ -9,13 +9,13 @@
     </div>
 </div>
 
-<!-- ATTRACTIONS SECTION -->
+
 <section class="py-5 bg-light text-center">
     <div class="container">
         <h2 class="mb-4">Top Attractions</h2>
         <div class="row g-4">
             <div class="col-md-4" *ngFor="let attraction of attractions">
-                <div class="card h-100 shadow-sm">
+                <div [routerLink]="[attraction.route, attraction.id]" class="card h-100 shadow-sm" style="cursor:pointer;">
                     <img [src]="attraction.image" class="card-img-top" [alt]="attraction.title">
                     <div class="card-body">
                         <h5 class="card-title">{{ attraction.title }}</h5>
@@ -27,29 +27,49 @@
     </div>
 </section>
 
-<!-- EXPERIENCES SECTION -->
+
 <section class="py-5">
     <div class="container">
         <h2 class="text-center mb-5">Unique Experiences</h2>
-        <div class="row align-items-center">
-            <div class="col-md-6">
+        <div class="row align-items-center align-items-md-start my-0">
+            <div class="col-md-6" style="text-align: justify;">
                 <h4>Street Food Tours</h4>
-                <p>Explore world-renowned hawker centers and try flavors from Chinese, Malay, Indian, and Peranakan
-                    cuisines.</p>
-                <ul>
-                    <li>Chinatown Complex Food Centre</li>
-                    <li>Maxwell Food Centre</li>
-                    <li>Lau Pa Sat</li>
+                <p>
+                    Embark on a flavorful journey through Singapore’s vibrant street food scene. These guided tours take
+                    you deep into the heart of local culture, where food tells stories of tradition, migration, and
+                    fusion.
+                </p>
+                <p>
+                    Wander through bustling hawker centers where sizzling woks, aromatic spices, and colorful
+                    ingredients come together to create unforgettable dishes. From savory satay and laksa to sweet
+                    treats like kaya toast and ice kacang, every bite is a celebration.
+                </p>
+                <ul class="list-unstyled">
+                    <li><i class="bi bi-geo-alt-fill text-danger me-2"></i><strong>Chinatown Complex Food
+                            Centre</strong> – Dive into traditional Chinese favorites like char kway teow and roast duck
+                        rice.</li>
+                    <li><i class="bi bi-star-fill text-warning me-2"></i><strong>Maxwell Food Centre</strong> – Home to
+                        the iconic Tian Tian Hainanese Chicken Rice, a must-try for every foodie.</li>
+                    <li><i class="bi bi-moon-stars-fill text-primary me-2"></i><strong>Lau Pa Sat</strong> – Enjoy satay
+                        skewers under the stars in this beautifully preserved colonial-era market.</li>
                 </ul>
+
+                <p>
+                    Whether you're a first-timer or a local rediscovering old favorites, these tours offer a deeper
+                    appreciation for Singapore’s multicultural identity—served on a plate.
+                </p>
+
             </div>
             <div class="col-md-6 text-center">
-                <img src="/assets/images/food-tour.jpg" class="img-fluid rounded-3 shadow-sm" alt="Food Tour">
+                <img src="/assets/images/food-tour.jpg" class="img-fluid rounded-3 shadow-sm" alt="Food Tour" />
             </div>
         </div>
     </div>
 </section>
 
 
+
+<!--
 <section class="py-5 bg-light">
     <div class="container">
         <h2 class="text-center mb-4">Photo Gallery</h2>
@@ -59,8 +79,21 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
+<section class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-4">Photo Gallery</h2>
+        <div class="row g-3">
+            <div class="col-6 col-md-3 gallery-img-wrapper position-relative" *ngFor="let img of galleryImages">
+                <img [src]="img.src" class="img-fluid rounded shadow-sm w-100" alt="Singapore" style="cursor: pointer;">
+                <div class="gallery-overlay">
+                    <span>{{ img.name }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section class="py-5">
     <div class="container">
@@ -74,12 +107,12 @@
                     <li class="list-group-item">🚇 Public transport is clean, efficient, and tourist-friendly</li>
                 </ul>
             </div>
-            <div class="col-md-6">
+            <!-- <div class="col-md-6">
                 <div class="ratio ratio-16x9 rounded">
                     <iframe src="https://maps.google.com/maps?q=singapore&t=&z=11&ie=UTF8&iwloc=&output=embed"
                         loading="lazy"></iframe>
                 </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -88,6 +121,6 @@
 <footer class="bg-dark text-white text-center py-5">
     <div class="container">
         <h2 class="mb-3">Ready to explore Singapore?</h2>
-        <a href="/tours" class="btn btn-danger btn-lg">Book a Tour</a>
+        <a routerLink="/activities"  class="btn btn-danger btn-lg">Explore Now</a>
     </div>
 </footer>

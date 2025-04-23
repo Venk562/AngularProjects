@@ -1,148 +1,165 @@
-<div class="container my-4" >
-  <div class="row g-2">
+<div class="hero-section text-white text-center py-5"
+  style="background: url('/assets/images/best-singapore-4.jpg') center/cover no-repeat;">
+  <div class="overlay" style="background-color: rgba(0,0,0,0.5); padding: 60px 20px;">
+    <h1 class="display-4">Explore Attractions in Singapore</h1>
+    <p class="lead text-center fw-bold fs-4">Experience the best of Singapore from iconic landmarks to thrilling adventures and
+      hidden gems.</p>
 
-    <div class="col-lg-7 col-md-6" style="margin-top: 100px;">
-      <img [src]="mainImage" class="img-fluid rounded w-100 h-100 object-fit-cover" alt="Main Image">
+  </div>
+</div>
+
+
+
+<section class="py-5 pe-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Unique Experiences</h2>
+    <div class="row align-items-center align-items-md-start my-0 ">
+      <div class="col-md-6">
+        <h1 class="fw-bold mb-2 position-relative d-inline-block">
+          Marina Bay Sands Singapore
+          <span class="d-block" style="width: 40px; height: 2px; background-color: red; margin-top: 4px;"></span>
+        </h1>
+        <p class="fs-5">
+          One of the most iconic and important attractions in Singapore is Marina Bay Sands. This architectural marvel
+          is not just a luxury hotel but a world-renowned landmark that symbolizes the modern and progressive spirit of
+          Singapore. Featuring three 55-story towers topped with the extraordinary SkyPark, Marina Bay Sands offers
+          panoramic views of the city skyline and the sparkling Marina Bay. Visitors can enjoy an unforgettable swim in
+          the infinity pool—the world’s largest at that heightor dine at celebrity chef restaurants, shop at high-end
+          boutiques, and experience the vibrant nightlife.
+        </p>
+        <p class="fs-5">
+          The complex also houses the ArtScience Museum, theaters, and a massive casino, making it a complete
+          entertainment destination. At night, the Spectra Light and Water Show dazzles spectators with a stunning
+          display of water jets, lasers, and projections.
+        </p>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <img src="/assets/images/MarinabaySand.jpg" style="width: max-content;" class="img-fluid rounded-3 shadow-sm"
+          alt="Food Tour" />
+      </div>
     </div>
+  </div>
+</section>
+
+<section class="py-5 pe-5">
+  <div class="container">
+    <!-- <h2 class="text-center mb-5">Unique Experiences</h2> -->
+    <div class="row align-items-center align-items-md-start my-0 ">
+
+      <div class="col-md-6 text-center">
+        <img src="/assets/images/Gardensbythebay.jpg" class="img-fluid rounded-3 shadow-sm" alt="Food Tour" />
+      </div>
 
 
-    <div class="col-lg-5 col-md-6 d-flex flex-column gap-2" style="margin-top: 100px;">
-      <div class="row g-2">
-
-        <div class="col-12">
-          <img [src]="rightImages[0]" class="img-fluid rounded w-100 object-fit-cover" alt="Top Right">
-        </div>
-
-        <div class="col-6" *ngFor="let img of rightImages.slice(1, 3); let i = index">
-          <div class="position-relative">
-            <img [src]="img" class="img-fluid rounded w-100 object-fit-cover" alt="Bottom Right {{ i + 1 }}">
-
-
-            <div *ngIf="i === 1 && extraImageCount > 0"
-              class="position-absolute top-50 start-50 translate-middle bg-dark bg-opacity-75 text-white px-3 py-1 rounded">
-              +{{ extraImageCount }}
+      <div class="col-md-6" style="width: 500px; margin-left: 70px;margin-top: -15px;">
+        <div class="bg-light p-4 rounded mb-4 mt-3 shadow-sm">
+          <h5 class="fw-bold mb-4">Visiting Information</h5>
+          <div class="d-flex align-items-start mb-3">
+            <div class="me-3">
+              <i class="fas fa-ticket-alt text-danger fs-4"></i>
             </div>
+            <div>
+              <strong>Admission</strong><br>
+              Ticketed (Free access to outdoor gardens, charges apply for conservatories and OCBC Skyway)
+            </div>
+          </div>
+          <div class="d-flex align-items-start mb-3">
+            <div class="me-3">
+              <i class="fas fa-map-marker-alt text-danger fs-4"></i>
+            </div>
+            <div>
+              <strong>Address</strong><br>
+              18 Marina Gardens Drive, Singapore 018953
+            </div>
+          </div>
+          <div class="d-flex align-items-start mb-3">
+            <div class="me-3">
+              <i class="fas fa-clock text-danger fs-4"></i>
+            </div>
+            <div>
+              <strong>Operating Hours</strong><br>
+              Outdoor Gardens: 5:00am – 2:00am<br>
+              Conservatories & OCBC Skyway: 9:00am – 9:00pm (last admission at 8:30pm)
+            </div>
+          </div>
+          <div class="d-flex align-items-start">
           </div>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="mt-3">
-    <p>
-      <strong>Discover 2 of the Loire Valley’s most charming chateau</strong> on this morning tour from Tours.
-      Visit the elegant Chateau Azay-le-Rideau, then explore the magnificent gardens of the Château de Villandry.
-    </p>
-    <span class="badge bg-danger">Likely to sell out</span>
-  </div>
-</div>
+</section>
 
 
+<div class="container museum-page py-4 mt-3" style="max-width: 100%;">
+  <h2 class="text-center mb-5 page-title">Top Attractions in Singapore</h2>
 
-<!-- <div class="hero-section text-white text-center py-5"
-  style="background-image: url('assets/singapore-banner.jpg'); background-size: cover; background-position: center;">
-  <div class="bg-dark bg-opacity-50 p-5 rounded">
-    <h1 class="display-4 fw-bold">Explore Singapore's Wonders</h1>
-    <p class="lead">Discover the top-rated attractions, vibrant culture, and unforgettable experiences.</p>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let item of museums">
+      <div [routerLink]="[item.route, item.id]" class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden" style="cursor: pointer;">
+        <div class="position-relative">
+          <img [src]="item.image" class="card-img-top" [alt]="item.title" loading="lazy">
+          <!-- <i class="bi bi-bookmark position-absolute bottom-0 end-0 m-3 fs-3 text-white"></i> -->
+          <i class="bi" [ngClass]="isItemSaved(item) ? 'bi-bookmark-fill' : 'bi-bookmark'"
+            (click)="onBookmarkClick($event, item)" class="position-absolute bottom-0 end-0 m-3 fs-3 text-white"
+            style="cursor: pointer;"></i>
+        </div>
 
-  </div>
-</div> -->
-
-<div class="text-center my-2 btn-group" style="margin-left: 90px;">
-  <button class="btn btn-outline-light text_color mx-1" [ngClass]="{'active': selectedFilter === 'all'}"
-    (click)="filterAttractions('all')">All</button>
-
-  <button class="btn btn-outline-light text_color mx-1" [ngClass]="{'active': selectedFilter === 'nature'}"
-    (click)="filterAttractions('nature')">Nature</button>
-
-  <button class="btn btn-outline-light text_color mx-1" [ngClass]="{'active': selectedFilter === 'landmark'}"
-    (click)="filterAttractions('landmark')">Landmarks</button>
-
-  <button class="btn btn-outline-light text_color mx-1" [ngClass]="{'active': selectedFilter === 'museum'}"
-    (click)="filterAttractions('museum')">Museums</button>
-</div>
-
-<div class="container mt-5" id="attractions">
-  <h2 class="text-center text-primary fw-bold">Top Attractions in Singapore</h2>
-  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mt-4">
-    <div class="col" *ngFor="let attraction of filteredAttractions" data-aos="fade-up">
-      <div class="card h-100 shadow-sm border rounded-3">
-        <img [src]="attraction.image" class="card-img-top" [alt]="attraction.title" style="cursor: pointer;"
-          (click)="openImageModal(attraction.image)">
         <div class="card-body">
-          <h5 class="card-title">{{ attraction.title }}</h5>
-          <p class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[attraction.description] ? 'normal' : 'nowrap',
-          'overflow': showFullTitle[attraction.description] ? 'visible' : 'hidden',
-          'text-overflow': showFullTitle[attraction.description] ? 'unset' : 'ellipsis'}">
-            {{ attraction.description }}
-          </p>
+          <h5 class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[item.title] ? 'normal' : 'nowrap',
+                             'overflow': showFullTitle[item.title] ? 'visible' : 'hidden',
+                             'text-overflow': showFullTitle[item.title] ? 'unset' : 'ellipsis'}">
+            {{ item.title }}
+          </h5>
 
-          <button *ngIf="!showFullTitle[attraction.description]" (click)="toggleTitle(attraction.description)"
-            class="btn btn-link text-decoration-none p-0">
+          <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitleCard(item.title)"
+            class="btn btn-link text-decoration-none p-0 d-flex justify-content-end">
             Read More
           </button>
-          <button *ngIf="showFullTitle[attraction.description]" (click)="toggleTitle(attraction.description)"
-            class="btn btn-link text-decoration-none p-0">
+          <button *ngIf="showFullTitle[item.title]" (click)="toggleTitleCard(item.title)"
+            class="btn btn-link text-decoration-none p-0 d-flex justify-content-end">
             Read Less
           </button>
 
-
-          <div class="d-flex justify-content-between align-items-center">
-            <span class="badge bg-warning text-dark">
-              ⭐ {{ attraction.rating }} ({{ attraction.reviews }} Reviews)
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <span class="badge rating-badge d-flex align-items-center">
+              ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
             </span>
-            <p class="fw-bold mb-0">SGD {{ attraction.price }}</p>
           </div>
-          <div class="d-flex flex-wrap gap-2 mt-2">
-            <span class="badge bg-success">Available</span>
-            <span class="badge bg-info">{{ attraction.duration }}</span>
+          <hr>
+
+          <div class="d-flex justify-content-start align-items-center mt-2">
+            <p class="mb-0 text-muted">From</p>
+            <p class="fw-bold fs-5 ms-2 mb-0">INR {{ item.price }}</p>
           </div>
-          <button class="btn btn-primary w-100 mt-3">Book Now</button>
         </div>
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered modal-lg">
-    <div class="modal-content">
-      <img [src]="selectedImage" class="img-fluid rounded" alt="Attraction Large View">
+<div class="w-100 my-5">
+  <div id="basicCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div *ngFor="let item of featuredMuseums; let i = index" class="carousel-item" [class.active]="i === 0">
+        <img [src]="item.image" [alt]="item.name" class="d-block w-100 full-carousel-img rounded">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded px-3 py-2">
+          <h5 class="mb-0">{{ item.name }}</h5>
+        </div>
+      </div>
     </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#basicCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"
+        style="background-color: rgba(0, 0, 0, 1); border-radius: 50%; padding: 10px;" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#basicCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"
+        style="background-color: rgba(0, 0, 0, 1); border-radius: 50%; padding: 10px;" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 </div>
-
-<!-- <div class="container my-5">
-  <h3 class="text-center text-secondary">What Travelers Say</h3>
-  <div id="testimonialCarousel" class="carousel slide mt-4" data-bs-ride="carousel">
-    <div class="carousel-inner text-center">
-      <div class="carousel-item active">
-        <blockquote class="blockquote">
-          <p class="mb-3">"An unforgettable experience in Singapore! Loved every bit."</p>
-          <footer class="blockquote-footer">Emily from UK</footer>
-        </blockquote>
-      </div>
-      <div class="carousel-item">
-        <blockquote class="blockquote">
-          <p class="mb-3">"The attractions are well organized and beautiful."</p>
-          <footer class="blockquote-footer">Raj from India</footer>
-        </blockquote>
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
-  </div>
-</div> -->
-
-
-<!-- <div class="container my-5 text-center">
-  <h3 class="text-secondary mb-4">Find Attractions on the Map</h3>
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15955.276380981685!2d103.8198366!3d1.3520831!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da190f318540db%3A0xeca4e86c70f9cb96!2sSingapore!5e0!3m2!1sen!2ssg!4v1712273788039"
-    width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy">
-  </iframe>
-</div> -->

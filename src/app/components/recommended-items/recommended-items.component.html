@@ -41,11 +41,14 @@
         [class.active]="i === 0">
         <div class="row d-flex flex-nowrap overflow-auto">
           <div class="col-md-4 col-lg-3" *ngFor="let item of group">
-            <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
+            <div [routerLink]="[item.route, item.id]" class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
               <div class="position-relative">
-                <img [routerLink]="[item.route, item.id]" [src]="item.image" class="card-img-top" [alt]="item.title"
-                  loading="lazy">
-                <i class="bi bi-bookmark position-absolute bottom-0 end-0 m-3 fs-3 text-white"></i>
+                <img [src]="item.image" class="card-img-top" [alt]="item.title" loading="lazy">
+                <!-- <i class="bi bi-bookmark position-absolute bottom-0 end-0 m-3 fs-3 text-white"></i> -->
+                <i class="bi" [ngClass]="isItemSaved(item) ? 'bi-bookmark-fill' : 'bi-bookmark'"
+                  (click)="onBookmarkClick($event, item)" class="position-absolute bottom-0 end-0 m-3 fs-3 text-white"
+                  style="cursor: pointer;"></i>
+
               </div>
 
               <div class="card-body">
@@ -55,14 +58,25 @@
                   {{ item.title }}
                 </h5>
 
-                <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitle(item.title)"
+                <!-- <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitle(item.title)"
                   class="btn btn-link text-decoration-none p-0">
                   Read More
                 </button>
                 <button *ngIf="showFullTitle[item.title]" (click)="toggleTitle(item.title)"
                   class="btn btn-link text-decoration-none p-0">
                   Read Less
+                </button> -->
+
+                <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitle(item.title, $event)"
+                  class="btn btn-link text-decoration-none p-0">
+                  Read More
                 </button>
+
+                <button *ngIf="showFullTitle[item.title]" (click)="toggleTitle(item.title, $event)"
+                  class="btn btn-link text-decoration-none p-0">
+                  Read Less
+                </button>
+
 
                 <div class="d-flex justify-content-between align-items-center mt-3">
                   <span class="badge rating-badge d-flex align-items-center">
@@ -73,7 +87,7 @@
 
                 <div class="d-flex justify-content-start align-items-center mt-2">
                   <p class="mb-0 text-muted">From</p>
-                  <p class="fw-bold fs-5 ms-2 mb-0">SGD {{ item.price }}</p>
+                  <p class="fw-bold fs-5 ms-2 mb-0">INR {{ item.price }}</p>
                 </div>
               </div>
             </div>
@@ -83,3 +97,5 @@
     </div>
   </div>
 </div>
+<br><br>
+<div style="padding-left: 100px;padding-right: 100px;"><hr></div>

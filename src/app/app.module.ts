@@ -40,6 +40,10 @@ import { PopularThingsSevenComponent } from './components/popular-things-seven/p
 import { PopularThingsEightComponent } from './components/popular-things-eight/popular-things-eight.component';
 import { PopularThingsNineComponent } from './components/popular-things-nine/popular-things-nine.component';
 import { PopularThingsTenComponent } from './components/popular-things-ten/popular-things-ten.component';
+import { WishListComponent } from './components/wish-list/wish-list.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { BreadcrumbComponent } from './components/breadcrumb/breadcrumb.component';
+import { ArtMuseumComponent } from './components/art-museum/art-museum.component';
 
 
 @NgModule({
@@ -73,7 +77,11 @@ import { PopularThingsTenComponent } from './components/popular-things-ten/popul
     PopularThingsSevenComponent,
     PopularThingsEightComponent,
     PopularThingsNineComponent,
-    PopularThingsTenComponent
+    PopularThingsTenComponent,
+    WishListComponent,
+    SearchResultsComponent,
+    BreadcrumbComponent,
+    ArtMuseumComponent
   ],
   imports: [
     BrowserModule,

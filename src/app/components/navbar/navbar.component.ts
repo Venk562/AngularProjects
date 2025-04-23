@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router' ;
+import { SavedItemsService } from '../../services/saved-items.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,8 +10,9 @@ import { Router } from '@angular/router' ;
 })
 export class NavbarComponent {
   isActivitiesPage: boolean = false;
+  savedCount = 0;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router , private savedItemsService: SavedItemsService) {}
 
   ngOnInit(): void {
     const activityRoutes = [
@@ -35,12 +37,19 @@ export class NavbarComponent {
       '/popular-things-eight',
       '/popular-things-nine',
       '/popular-things-ten',
+      '/wish-list',
     ];
 
-    this.router.events.subscribe(() => {
-      const currentUrl = this.router.url;
-      this.isActivitiesPage = activityRoutes.some(route => currentUrl.includes(route));
+    // this.router.events.subscribe(() => {
+    //   const currentUrl = this.router.url;
+    //   this.isActivitiesPage = activityRoutes.some(route => currentUrl.includes(route));
+    // });
+
+    this.savedItemsService.savedItems$.subscribe((items: any[]) => {
+      this.savedCount = items.length;
     });
+
+
   }
 
 }

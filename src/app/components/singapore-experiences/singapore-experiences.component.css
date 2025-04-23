@@ -14,3 +14,104 @@
   .card-body .rating {
     color: #f39c12;
   }
+  /* .card-body{
+    border: 1px solid grey !important;
+    border-radius:0 !important;
+  } */
+
+  .fixed-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.card {
+    border-radius: 20px !important;
+    overflow: hidden;
+    border: 1px solid grey !important;
+}
+
+.card-img-top {
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.btn-view {
+    background-color: #44107B;
+    color: white;
+    border: 2px solid #44107B;
+}
+
+.hero-section {
+    background-image: url('/assets/images/Merlion_statue.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.search-bar {
+    max-width: 900px;
+    width: 100%;
+}
+
+.input-group-text {
+    border-radius: 50px 0 0 50px;
+}
+
+.form-control {
+    border-radius: 0 50px 50px 0;
+}
+
+.search-bar {
+    max-width: 1200px;
+    width: 120%;
+}
+
+.rating-badge {
+    background-color: #5C1AC3; /* Purple background */
+    color: white;
+    padding: 4px 10px;
+    border-radius: 8px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 50px;
+    height: 30px;
+    font-size: 0.9rem;
+  }
+
+  .separator-line {
+    width: 1px;
+    height: 20px;
+    background-color: #ccc;
+    margin: 0 8px;
+    display: inline-block;
+  }
+
+  .reviews {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+
+  .rating-divider {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 10px 0;
+  }
+
+  .card-title {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.highlight{
+    text-align: justify !important;
+}
+

@@ -1,50 +1,165 @@
-<div id="tourCarousel" class="carousel slide" style="margin-top: 120px;" data-bs-ride="carousel">
+<div class="hero-section text-white text-center py-5"
+  style="background: url('/assets/images/flyer-1.jpg') center/cover no-repeat;">
+  <div class="overlay" style="background-color: rgba(0,0,0,0.5); padding: 60px 20px;">
+    <h1 class="display-4">Explore Tours in Singapore</h1>
+    <p class="lead text-center fw-bold fs-4">Experience the best of Singapore from iconic landmarks to thrilling
+      adventures and
+      hidden gems.</p>
+
+  </div>
+</div>
+
+
+
+<section class="py-5 pe-5">
+  <div class="container">
+    <h2 class="text-center mb-5">Unique Experiences</h2>
+    <div class="row align-items-center align-items-md-start my-0 ">
+      <div class="col-md-6">
+        <h1 class="fw-bold mb-2 position-relative d-inline-block">
+          SkyPark Observation Deck at Marina Bay Sands
+          <span class="d-block" style="width: 40px; height: 2px; background-color: red; margin-top: 4px;"></span>
+        </h1>
+        <p class="fs-5">
+          Perched atop the 57th floor of the iconic Marina Bay Sands, the SkyPark Observation Deck offers breathtaking
+          panoramic views of Singapore’s skyline. From this vantage point, visitors can marvel at landmarks such as
+          Gardens by the Bay, the Singapore Flyer, and the bustling Marina Bay area . The deck features a spacious
+          wooden platform, allowing guests to relax and capture unforgettable photos of the city’s beauty, day or night.
+        </p>
+        <p class="fs-5">
+          Additionally, the SkyPark includes interactive digital installations that provide real-time insights into the
+          city’s evolution . Whether you're looking to witness a stunning sunset or explore the cityscape from above,
+          the SkyPark Observation Deck is a must-visit attraction in Singapore.
+        </p>
+      </div>
+
+      <div class="col-md-6 text-center">
+        <img src="/assets/images/tours.jpg" style="width: max-content;" class="img-fluid rounded-3 shadow-sm"
+          alt="Food Tour" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5 pe-5">
+  <div class="container">
+    <!-- <h2 class="text-center mb-5">Unique Experiences</h2> -->
+    <div class="row align-items-center align-items-md-start my-0 ">
+
+      <div class="col-md-6 text-center">
+        <img src="/assets/images/tours-4.jpg" class="img-fluid rounded-3 shadow-sm" alt="Food Tour" />
+      </div>
+
+
+      <div class="col-md-6" style="width: 500px; margin-left: 70px;">
+        <div class="bg-light p-4 rounded mb-4 mt-3 shadow-sm">
+          <h5 class="fw-bold mb-4">Visiting Information</h5>
+
+          <div class="d-flex align-items-start mb-3">
+            <div class="me-3">
+              <i class="fas fa-ticket-alt text-danger fs-4"></i>
+            </div>
+            <div>
+              <strong>Admission</strong><br>
+              Private charter (Pricing varies based on duration and yacht type. Advance booking required.)
+            </div>
+          </div>
+
+          <div class="d-flex align-items-start mb-3">
+            <div class="me-3">
+              <i class="fas fa-map-marker-alt text-danger fs-4"></i>
+            </div>
+            <div>
+              <strong>Address</strong><br>
+              ONE°15 Marina Sentosa Cove, 11 Cove Drive, Singapore 098497
+            </div>
+          </div>
+
+          <div class="d-flex align-items-start mb-3">
+            <div class="me-3">
+              <i class="fas fa-clock text-danger fs-4"></i>
+            </div>
+            <div>
+              <strong>Operating Hours</strong><br>
+              Daily: 9:00am – 10:00pm (Timings may vary based on charter schedule)
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<div class="container museum-page py-4 mt-3" style="max-width: 100%;">
+  <h2 class="text-center mb-5 page-title">Top Attractions in Singapore</h2>
+
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let item of museums">
+      <div [routerLink]="[item.route, item.id]" class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden" style="cursor: pointer;">
+        <div class="position-relative">
+          <img [src]="item.image" class="card-img-top" [alt]="item.title" loading="lazy">
+          <!-- <i class="bi bi-bookmark position-absolute bottom-0 end-0 m-3 fs-3 text-white"></i> -->
+          <i class="bi" [ngClass]="isItemSaved(item) ? 'bi-bookmark-fill' : 'bi-bookmark'"
+            (click)="onBookmarkClick($event, item)" class="position-absolute bottom-0 end-0 m-3 fs-3 text-white"
+            style="cursor: pointer;"></i>
+        </div>
+
+        <div class="card-body">
+          <h5 class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[item.title] ? 'normal' : 'nowrap',
+                             'overflow': showFullTitle[item.title] ? 'visible' : 'hidden',
+                             'text-overflow': showFullTitle[item.title] ? 'unset' : 'ellipsis'}">
+            {{ item.title }}
+          </h5>
+
+          <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitleCard(item.title)"
+            class="btn btn-link text-decoration-none p-0 d-flex justify-content-end">
+            Read More
+          </button>
+          <button *ngIf="showFullTitle[item.title]" (click)="toggleTitleCard(item.title)"
+            class="btn btn-link text-decoration-none p-0 d-flex justify-content-end">
+            Read Less
+          </button>
+
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <span class="badge rating-badge d-flex align-items-center">
+              ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
+            </span>
+          </div>
+          <hr>
+
+          <div class="d-flex justify-content-start align-items-center mt-2">
+            <p class="mb-0 text-muted">From</p>
+            <p class="fw-bold fs-5 ms-2 mb-0">INR {{ item.price }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="w-100 my-5">
+  <div id="basicCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
-      <div
-        class="carousel-item"
-        *ngFor="let item of carouselItems; let i = index"
-        [class.active]="i === 0">
-
-        <img
-          [src]="item.image"
-          class="d-block w-100 carousel-image"
-          alt="{{ item.title }}">
-
-        <div class="carousel-caption d-none d-md-block">
-          <h5 class="carousel-title">{{ item.title }}</h5>
+      <div *ngFor="let item of featuredMuseums; let i = index" class="carousel-item" [class.active]="i === 0">
+        <img [src]="item.image" [alt]="item.name" class="d-block w-100 full-carousel-img rounded">
+        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded px-3 py-2">
+          <h5 class="mb-0">{{ item.name }}</h5>
         </div>
       </div>
     </div>
 
-    <button class="carousel-control-prev" type="button" data-bs-target="#tourCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#basicCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"
+        style="background-color: rgba(0, 0, 0, 1); border-radius: 50%; padding: 10px;" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-
-    <button class="carousel-control-next" type="button" data-bs-target="#tourCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <button class="carousel-control-next" type="button" data-bs-target="#basicCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"
+        style="background-color: rgba(0, 0, 0, 1); border-radius: 50%; padding: 10px;" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
-
-
-
-
-
-<div class="container ">
-    <h2 class="title text-center mb-4">Explore Tours in Singapore</h2>
-
-    <div class="row">
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let tour of tours">
-            <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden">
-                <img [src]="tour.image" [alt]="tour.title" class="tour-image img-fluid">
-                <div class="card-body">
-                    <h5 class="card-title mb-2">{{ tour.title }}</h5>
-                    <p class="rating text-muted mb-1">⭐ {{ tour.rating }} ({{ tour.reviews }} reviews)</p>
-                    <p class="price fw-bold mb-2">{{ tour.price }}</p>
-                    <button class="btn btn-primary w-100">Book Now</button>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>

@@ -22,9 +22,12 @@ import { PopularThingsSevenComponent } from './components/popular-things-seven/p
 import { PopularThingsEightComponent } from './components/popular-things-eight/popular-things-eight.component';
 import { PopularThingsNineComponent } from './components/popular-things-nine/popular-things-nine.component';
 import { PopularThingsTenComponent } from './components/popular-things-ten/popular-things-ten.component';
+import { WishListComponent } from './components/wish-list/wish-list.component';
+import { SearchResultsComponent } from './search-results/search-results.component';
+import { ArtMuseumComponent } from './components/art-museum/art-museum.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: HomeComponent , data: { breadcrumb: 'Home' } },
   { path: 'activities', component: ViewAllActivitiesComponent },
   { path: 'recommendation-one/:id', component: RecommendationOneComponent },
   { path: 'recommendation-two/:id', component: RecommendationTwoComponent },
@@ -46,6 +49,11 @@ const routes: Routes = [
   { path: 'popular-things-eight/:id', component: PopularThingsEightComponent},
   { path: 'popular-things-nine/:id', component: PopularThingsNineComponent},
   { path: 'popular-things-ten/:id', component: PopularThingsTenComponent},
+  { path: 'artscience-museum/:id', component: ArtMuseumComponent},
+  { path: 'wish-list', component: WishListComponent},
+  { path: 'search', component: SearchResultsComponent},
+
+
 
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
 ];

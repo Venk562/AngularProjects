@@ -10,4 +10,25 @@
     height: 100%;
     object-fit: cover;
   }
-  
+
+  .gallery-img-wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    width: 95%;
+    padding: 0.5rem;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .gallery-img-wrapper:hover .gallery-overlay {
+    opacity: 1;
+  }
+

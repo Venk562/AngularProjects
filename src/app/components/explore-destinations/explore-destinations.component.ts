@@ -1,4 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SearchService } from '../../services/search.service';
+
+interface ExploreItems {
+  id: number;
+  title: string;
+  image: string;
+  location: string;
+  route: string;
+}
 
 @Component({
   selector: 'app-explore-destinations',
@@ -6,39 +15,57 @@ import { Component } from '@angular/core';
   templateUrl: './explore-destinations.component.html',
   styleUrl: './explore-destinations.component.css'
 })
-export class ExploreDestinationsComponent {
-  ExploreItems = [
+export class ExploreDestinationsComponent implements OnInit {
+  ExploreItems: ExploreItems[] = [
     {
-      id:1,
+      id: 1,
       title: 'Singapore',
       image: '/assets/images/HydroDash.png',
       location: 'Singapore',
-      route:'/explore-singapore'
+      route: '/explore-singapore'
     },
     {
-      id:2,
+      id: 2,
       title: 'Thailand',
-      image: '/assets/images/Haw Par Villa.jpg',
-      location: 'Thailand'
+      image: '/assets/images/Thailand-img-1.jpg',
+      location: 'Thailand',
+      route: '/explore-Thailand'
+
     },
     {
-      id:3,
+      id: 3,
       title: 'Malaysia',
-      image: '/assets/images/Mega Adventure.jpg',
-      location: 'Malaysia'
+      image: '/assets/images/Malaysia-1.jpg',
+      location: 'Malaysia',
+      route: '/explore-Malaysia'
     },
     {
-      id:4,
+      id: 4,
       title: 'Dubai',
-      image: '/assets/images/Adventure Cove Waterpark.jpg',
-      location: 'Dubai'
+      image: '/assets/images/dubai-img.jpg',
+      location: 'Dubai',
+      route: '/explore-Dubai'
     },
     {
-      id:5,
+      id: 5,
       title: 'Sri Lanka',
-      image: '/assets/images/Universal Studios Singapore.jpg',
-      location: 'Sri Lanka'
+      image: '/assets/images/srilanka-6.jpg',
+      location: 'Sri Lanka',
+      route: '/explore-sriLanka'
     }
   ];
+  filteredExploreItems: ExploreItems[] = [];
+  constructor(private searchService: SearchService) { }
+  ngOnInit(): void {
+    this.filteredExploreItems = [...this.ExploreItems];
+
+    this.searchService.searchTerm$.subscribe((term) => {
+      const lowerTerm = term.toLowerCase();
+
+      this.filteredExploreItems = this.ExploreItems.filter(item =>
+        item.title.toLowerCase().includes(lowerTerm)
+      );
+    });
+  }
 }
 

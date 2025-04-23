@@ -1,0 +1,14 @@
+.breadcrumb {
+    background: none;
+    padding: 0;
+    font-size: 14px;
+
+    .breadcrumb-item + .breadcrumb-item::before {
+      content: "/";
+    }
+
+    .breadcrumb-item.active {
+      font-weight: bold;
+    }
+  }
+  

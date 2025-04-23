@@ -1,68 +1,244 @@
+<!-- <section class="hero-banner text-white text-center d-flex align-items-center justify-content-center">
+  <div id="experiences" class="container">
+    <h1 class="display-4 fw-bold">Unforgettable Experiences in Singapore</h1>
+    <p class="lead">Explore top-rated activities, hidden gems, and cultural adventures.</p>
+    <button routerLink="/activities" class="btn btn-warning btn-lg mt-3"
+      (click)="scrollToSection('experiences')">Discover More</button>
 
-<section class="hero-banner text-white text-center d-flex align-items-center justify-content-center" >
-    <div  id="experiences" class="container">
-      <h1 class="display-4 fw-bold">Unforgettable Experiences in Singapore</h1>
-      <p class="lead">Explore top-rated activities, hidden gems, and cultural adventures.</p>
-      <button class="btn btn-warning btn-lg mt-3" (click)="scrollToSection('experiences')">Discover More</button>
+  </div>
+</section> -->
 
+<div class="hero-section text-white text-center py-5"
+  style="background: url('/assets/images/Experiences-4.jpg') center/cover no-repeat;">
+  <div class="overlay" style="background-color: rgba(0,0,0,0.5); padding: 60px 20px;">
+    <h1 class="display-4">Unique Experiences in Singapore</h1>
+    <p class="lead fw-bold fs-4">Discover art, culture, history, and science in Singapore</p>
+  </div>
+</div>
+
+
+<!-- <section class="container py-5">
+  <h2 class="text-center mb-5">Top Experiences in Singapore</h2>
+  <div class="row">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let tour of experiences">
+      <div class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden" style="cursor:pointer;">
+        <img [routerLink]="[tour.route, tour.id]" [src]="tour.image" [alt]="tour.title" class="tour-image img-fluid">
+        <div class="card-body">
+          <h5 class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[tour.title] ? 'normal' : 'nowrap',
+                                         'overflow': showFullTitle[tour.title] ? 'visible' : 'hidden',
+                                         'text-overflow': showFullTitle[tour.title] ? 'unset' : 'ellipsis'}">
+            {{ tour.title }}
+          </h5>
+
+          <button *ngIf="!showFullTitle[tour.title]" (click)="toggleTitle(tour.title, $event)"
+            class="btn btn-link text-decoration-none p-0">
+            Read More
+          </button>
+
+          <button *ngIf="showFullTitle[tour.title]" (click)="toggleTitle(tour.title, $event)"
+            class="btn btn-link text-decoration-none p-0">
+            Read Less
+          </button>
+
+
+          <div class="d-flex justify-content-between align-items-center mt-3">
+            <span class="badge rating-badge d-flex align-items-center">
+              ⭐ {{ tour.rating }} <span class="ms-1">({{ tour.reviews }})</span>
+            </span>
+          </div>
+          <hr>
+
+          <div class="d-flex justify-content-start align-items-center mt-2">
+            <p class="mb-0 text-muted">From</p>
+            <p class="fw-bold fs-5 ms-2 mb-0">INR {{ tour.price }}</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </section>
+  </div>
+</section> -->
+
+<div class="container mt-5">
+  <h2 class="fw-bold mb-0" style="color:#44107B;">Explore Singapore</h2><br>
 
 
-  <section class="intro-section py-5 bg-light text-center">
-    <div class="container">
-      <h2 class="mb-3">What Makes Singapore Unique?</h2>
-      <p class="lead">From rooftop sky parks to underwater aquariums and vibrant night markets, Singapore is packed with world-class experiences for every kind of traveler.</p>
-    </div>
-  </section>
+  <div class="row d-flex flex-nowrap overflow-auto">
+      <div class="col-md-4 col-lg-3" *ngFor="let item of popularThings">
+          <div [routerLink]="[item.route, item.id]" class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden"
+              style="cursor: pointer;">
+              <div class="position-relative">
+                  <img [src]="item.image" class="card-img-top img-fluid" [alt]="item.title" loading="lazy">
+                  <!-- <i class="bi bi-bookmark position-absolute bottom-0 end-0 m-3 fs-3 text-white"></i> -->
+                  <i class="bi" [ngClass]="isItemSaved(item) ? 'bi-bookmark-fill' : 'bi-bookmark'"
+                  (click)="onBookmarkClick($event, item)" class="position-absolute bottom-0 end-0 m-3 fs-3 text-white"
+                  style="cursor: pointer;"></i>
+              </div>
+
+              <div class="card-body">
+                  <h5 class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[item.title] ? 'normal' : 'nowrap',
+                                 'overflow': showFullTitle[item.title] ? 'visible' : 'hidden',
+                                 'text-overflow': showFullTitle[item.title] ? 'unset' : 'ellipsis'}">
+                      {{ item.title }}
+                  </h5>
+
+                  <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitle(item.title, $event)"
+                      class="btn btn-link text-decoration-none p-0">
+                      Read More
+                  </button>
+                  <button *ngIf="showFullTitle[item.title]" (click)="toggleTitle(item.title, $event)"
+                      class="btn btn-link text-decoration-none p-0">
+                      Read Less
+                  </button>
+
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                      <span class="badge rating-badge d-flex align-items-center">
+                          ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
+                      </span>
+                  </div>
+                  <hr>
+
+                  <div class="d-flex justify-content-start align-items-center mt-2">
+                      <p class="mb-0 text-muted">From</p>
+                      <p class="fw-bold fs-5 ms-2 mb-0">INR {{ item.price }}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <br><br>
+  <!-- <div class="row">
+      <div class="col-md-3" *ngFor="let item of popularThingsSecond">
+          <div class="card h-100 shadow-sm border-2 d-flex flex-column">
+              <img [src]="item.image" class="card-img-top img-fluid fixed-image" [alt]="item.title" loading="lazy">
+              <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">{{ item.title }}</h5>
+                  <div class="d-flex align-items-center">
+                      <span class="badge bg-warning text-dark me-2">
+                          ⭐ {{ item.rating }} ({{ item.reviews }})
+                      </span>
+                      <i class="bi bi-bookmark"></i>
+                  </div>
+                  <p class="mt-2 mb-0 text-muted">From</p>
+                  <p class="fw-bold">SGD {{ item.price }}</p>
+              </div>
+          </div>
+      </div>
+  </div> -->
+  <div class="row d-flex flex-nowrap overflow-auto">
+      <div class="col-md-4 col-lg-3" *ngFor="let item of popularThingsSecond">
+          <div [routerLink]="[item.route, item.id]" class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden"
+              style="cursor: pointer;">
+              <div class="position-relative">
+                  <img [src]="item.image" class="card-img-top img-fluid" [alt]="item.title" loading="lazy">
+                  <!-- <i class="bi bi-bookmark position-absolute bottom-0 end-0 m-3 fs-3 text-white"></i> -->
+                  <i class="bi" [ngClass]="isItemSaved(item) ? 'bi-bookmark-fill' : 'bi-bookmark'"
+                  (click)="onBookmarkClick($event, item)" class="position-absolute bottom-0 end-0 m-3 fs-3 text-white"
+                  style="cursor: pointer;"></i>
+              </div>
+
+              <div class="card-body">
+                  <h5 class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[item.title] ? 'normal' : 'nowrap',
+                                 'overflow': showFullTitle[item.title] ? 'visible' : 'hidden',
+                                 'text-overflow': showFullTitle[item.title] ? 'unset' : 'ellipsis'}">
+                      {{ item.title }}
+                  </h5>
+
+                  <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitle(item.title, $event)"
+                      class="btn btn-link text-decoration-none p-0">
+                      Read More
+                  </button>
+                  <button *ngIf="showFullTitle[item.title]" (click)="toggleTitle(item.title, $event)"
+                      class="btn btn-link text-decoration-none p-0">
+                      Read Less
+                  </button>
+
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                      <span class="badge rating-badge d-flex align-items-center">
+                          ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
+                      </span>
+                  </div>
+                  <hr>
+
+                  <div class="d-flex justify-content-start align-items-center mt-2">
+                      <p class="mb-0 text-muted">From</p>
+                      <p class="fw-bold fs-5 ms-2 mb-0">SGD {{ item.price }}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  <br><br>
+
+  <div class="row d-flex flex-nowrap overflow-auto">
+      <div class="col-md-4 col-lg-3" *ngFor="let item of popularThingsThird">
+          <div [routerLink]="[item.route, item.id]" class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden"
+              style="cursor: pointer;">
+              <div class="position-relative">
+                  <img [src]="item.image" class="card-img-top img-fluid" [alt]="item.title" loading="lazy">
+                  <!-- <i class="bi bi-bookmark position-absolute bottom-0 end-0 m-3 fs-3 text-white"></i> -->
+                  <i class="bi" [ngClass]="isItemSaved(item) ? 'bi-bookmark-fill' : 'bi-bookmark'"
+                  (click)="onBookmarkClick($event, item)" class="position-absolute bottom-0 end-0 m-3 fs-3 text-white"
+                  style="cursor: pointer;"></i>
+              </div>
+
+              <div class="card-body">
+                  <h5 class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[item.title] ? 'normal' : 'nowrap',
+                                 'overflow': showFullTitle[item.title] ? 'visible' : 'hidden',
+                                 'text-overflow': showFullTitle[item.title] ? 'unset' : 'ellipsis'}">
+                      {{ item.title }}
+                  </h5>
+                  <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitle(item.title, $event)"
+                      class="btn btn-link text-decoration-none p-0">
+                      Read More
+                  </button>
+                  <button *ngIf="showFullTitle[item.title]" (click)="toggleTitle(item.title, $event)"
+                      class="btn btn-link text-decoration-none p-0">
+                      Read Less
+                  </button>
 
 
-  <section class="container py-5">
-    <h2 class="text-center mb-5">Top Experiences in Singapore</h2>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                      <span class="badge rating-badge d-flex align-items-center">
+                          ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
+                      </span>
+                  </div>
+                  <hr>
+
+                  <div class="d-flex justify-content-start align-items-center mt-2">
+                      <p class="mb-0 text-muted">From</p>
+                      <p class="fw-bold fs-5 ms-2 mb-0">SGD {{ item.price }}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<br>
+<section class="why-singapore py-5 text-white" style="background-color: #2c3e50;">
+  <div class="container text-center">
+    <h2 class="mb-4">Why Travel to Singapore?</h2>
     <div class="row">
-      <div class="col-lg-3 col-md-6 mb-4" *ngFor="let experience of experiences">
-        <div class="card h-100 shadow-sm">
-          <div class="overflow-hidden" style="height: 200px;">
-            <img [src]="experience.image" [alt]="experience.name" class="card-img-top w-100 h-100" style="object-fit: cover;">
-          </div>
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title">{{ experience.name }}</h5>
-            <p class="card-text text-muted">{{ experience.description }}</p>
-            <p class="rating text-warning mb-1">⭐ {{ experience.rating }}</p>
-            <p class="price text-primary fw-bold mb-3">{{ experience.price }}</p>
-            <button class="btn btn-primary mt-auto">Book Experience</button>
-          </div>
-        </div>
+      <div class="col-md-4">
+        <i class="bi bi-globe fs-1 mb-2"></i>
+        <h5>Cultural Diversity</h5>
+        <p>Explore Chinese temples, Malay heritage, Indian markets, and modern marvels all in one place.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-lightning fs-1 mb-2"></i>
+        <h5>Fast & Safe</h5>
+        <p>Modern infrastructure, efficient transport, and world-class cleanliness and safety.</p>
+      </div>
+      <div class="col-md-4">
+        <i class="bi bi-star fs-1 mb-2"></i>
+        <h5>Unique Attractions</h5>
+        <p>From the Marina Bay SkyPark to Sentosa Island — adventure, shopping, and nature await.</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
 
-  <section class="why-singapore py-5 text-white" style="background-color: #2c3e50;">
-    <div class="container text-center">
-      <h2 class="mb-4">Why Travel to Singapore?</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <i class="bi bi-globe fs-1 mb-2"></i>
-          <h5>Cultural Diversity</h5>
-          <p>Explore Chinese temples, Malay heritage, Indian markets, and modern marvels all in one place.</p>
-        </div>
-        <div class="col-md-4">
-          <i class="bi bi-lightning fs-1 mb-2"></i>
-          <h5>Fast & Safe</h5>
-          <p>Modern infrastructure, efficient transport, and world-class cleanliness and safety.</p>
-        </div>
-        <div class="col-md-4">
-          <i class="bi bi-star fs-1 mb-2"></i>
-          <h5>Unique Attractions</h5>
-          <p>From the Marina Bay SkyPark to Sentosa Island — adventure, shopping, and nature await.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- <section class="cta-section py-5 bg-warning text-center">
+<!-- <section class="cta-section py-5 bg-warning text-center">
     <div class="container">
       <h2 class="mb-3">Ready for Your Next Adventure?</h2>
       <p class="lead mb-4">Book the best experiences in Singapore now and create memories that last forever.</p>
