@@ -152,6 +152,7 @@ export class ViewAllActivitiesComponent implements OnInit {
   filteredPopularThingsSecond: PopularThing[] = [];
   filteredPopularThingsThird: PopularThing[] = [];
   searchQuery: string = '';
+  subscription: any;
 
   constructor(private savedItemsService: SavedItemsService, private searchService: SearchService) { }
 
@@ -191,6 +192,10 @@ export class ViewAllActivitiesComponent implements OnInit {
         item.title.toLowerCase().includes(lowerTerm)
       );
     });
+
+    this.subscription = this.searchService.searchTerm$.subscribe(term => {
+      this.searchQuery = term;
+    });
   }
 
 
@@ -201,7 +206,9 @@ export class ViewAllActivitiesComponent implements OnInit {
     this.showFullTitle[title] = !this.showFullTitle[title];
   }
 
-
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+  }
   onSearch() {
     this.searchService.setSearchTerm(this.searchQuery);
   }

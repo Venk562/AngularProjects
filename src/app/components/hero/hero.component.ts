@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
-export class HeroComponent implements OnInit,OnDestroy  {
+export class HeroComponent implements OnInit, OnDestroy {
   // searchQuery: string = '';
 
   // constructor(private router: Router,private searchService: SearchService) {}
@@ -20,7 +20,7 @@ export class HeroComponent implements OnInit,OnDestroy  {
   searchQuery: string = '';
   private subscription!: Subscription;
 
-  constructor(private router: Router, private searchService: SearchService) {}
+  constructor(private router: Router, private searchService: SearchService) { }
 
   ngOnInit(): void {
     this.subscription = this.searchService.searchTerm$.subscribe(term => {
