@@ -318,4 +318,6 @@ export class RecommendationTwoComponent {
 
     this.showFullTitle[title] = !this.showFullTitle[title];
   }
+
+
 }

@@ -40,16 +40,20 @@ export class NavbarComponent {
       '/wish-list',
     ];
 
-    // this.router.events.subscribe(() => {
-    //   const currentUrl = this.router.url;
-    //   this.isActivitiesPage = activityRoutes.some(route => currentUrl.includes(route));
-    // });
+    this.router.events.subscribe(() => {
+      const currentUrl = this.router.url;
+      this.isActivitiesPage = activityRoutes.some(route => currentUrl.includes(route));
+    });
 
     this.savedItemsService.savedItems$.subscribe((items: any[]) => {
       this.savedCount = items.length;
     });
 
 
+
+  }
+  goBack() {
+    window.history.back();
   }
 
 }
