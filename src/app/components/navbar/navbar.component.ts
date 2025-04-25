@@ -38,6 +38,7 @@ export class NavbarComponent {
       '/popular-things-nine',
       '/popular-things-ten',
       '/wish-list',
+      '/artscience-museum'
     ];
 
     this.router.events.subscribe(() => {

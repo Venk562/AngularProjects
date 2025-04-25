@@ -138,7 +138,7 @@ export class RecommendationOneComponent implements OnInit {
       image: '/assets/images/Skyline Luge Sentosa Tickets gal-4.jpeg',
     },
     {
-      image: '/assets/images/Singapore Flyer Tickets.jpg',
+      image: '/assets/images/Sentosa Island-2.jpg',
     }
   ];
   displayedImages = this.skylineluge.slice(0, 4);

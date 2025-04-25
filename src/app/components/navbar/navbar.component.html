@@ -1,46 +1,31 @@
-<nav class="navbar navbar-expand-lg bg-purple w-100 py-3 px-4">
-  <div class="container-fluid px-0">
-    <a class="navbar-brand text-white fw-bold" href="#">
-      <img class="logo-img" src="/assets/images/Cloud Tickets LOGO (2).png" alt="Krystal Travels Logo" title="Cloud Tickets">
+<nav class="navbar bg-purple px-3 py-2 shadow-sm">
+  <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
+
+    <a class="navbar-brand d-flex align-items-center gap-2 text-white fw-bold mb-2 mb-lg-0" href="#">
+      <img src="/assets/images/Cloud Tickets LOGO (2).png" alt="Cloud Tickets Logo" width="40" height="40"
+        class="rounded shadow-sm me-2" />
+      <span class="fs-4 ">Cloud Tickets</span>
     </a>
 
 
+    <div *ngIf="!isActivitiesPage" class="d-flex align-items-center gap-4">
 
-    <div *ngIf="!isActivitiesPage">
-      <div class="d-flex align-items-center gap-3">
-        <div class="position-relative">
-          <i class="bi bi-bell text-white fs-4"></i>
-          <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">2</span>
-        </div>
-        <div class="position-relative">
-          <!-- <i class="bi bi-bookmark text-white fs-4"></i>
-          <span class="badge bg-danger position-absolute top-0 start-100 translate-middle"> {{ savedCount }}
-          </span> -->
+      <div class="position-relative">
+        <i class="bi bi-bell fs-5 text-white"></i>
+        <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">2</span>
+      </div>
 
-
-          <!-- <a  class="position-relative text-decoration-none"> -->
-            <i [routerLink]="['/wish-list']" class="bi bi-bookmark text-white fs-4" style="cursor: pointer;"></i>
-            <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">
-              {{ savedCount }}
-            </span>
-          <!-- </a> -->
-
-        </div>
-        <!-- <button class="btn btn-light fw-bold text-purple d-flex align-items-center gap-2 rounded-pill"><i
-            class="bi bi-person fs-4"></i>Login</button> -->
+      <div class="position-relative">
+        <i [routerLink]="['/wish-list']" class="bi bi-heart fs-5 text-white" style="cursor: pointer;"></i>
+        <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">{{ savedCount }}</span>
       </div>
     </div>
-    <div *ngIf="isActivitiesPage"  >
-      <!-- <a routerLink="/" class="btn btn-light fw-bold text-purple d-flex align-items-center gap-2" class="d-flex gap-3 mb-3">
-        <i class="bi bi-house-door-fill fw-bolder fs-4"></i>
-        <span>Home</span>
-      </a> -->
 
-      <button  class="btn btn-light fw-bold text-purple d-flex align-items-center gap-2" (click)="goBack()">
-        <i class="bi bi-arrow-left fw-bolder fs-4"></i>
-        <span>Back</span>
+    <div *ngIf="isActivitiesPage">
+      <button class="btn btn-light fw-bold text-purple d-flex align-items-center gap-2 rounded-pill"
+        (click)="goBack()">
+        <i class="bi bi-arrow-left fw-bold fs-5"></i> Back
       </button>
-
     </div>
   </div>
 </nav>

@@ -63,7 +63,7 @@ export class PopularThingsThreeComponent {
     }
   }
 
-  highlights = `Harry Potter: Visions of Magic is an interactive art experience that made its Asia premiere at Resorts World Sentosa in Singapore. This exhibition features ten immersive environments inspired by the Wizarding World, including iconic locations such as the Ministry of Magic, Newt’s Menagerie, and the Pensieve. Notably, the Chamber of Secrets and The Trap Door are exclusive to the Singapore exhibition.`;
+  highlights = `​Harry Potter: Visions of Magic is an immersive art experience that invites fans to explore the hidden and mysterious corners of the Wizarding World. Currently showcased at Resorts World Sentosa in Singapore, the exhibition features a series of interactive, multi-sensory environments designed to illuminate the invisible and reveal visions of magic all around you. Visitors embark on a transformative journey through various artistic installations, engaging with the magical world in a unique and captivating way. The experience is designed to be both enchanting and thought-provoking, offering a fresh perspective on the beloved Harry Potter universe.l`;
 
 
   showFullHighlights = false;

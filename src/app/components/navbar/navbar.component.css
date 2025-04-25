@@ -1,0 +1,34 @@
+/* Navbar styles  starts */
+
+/* .glassy-navbar {
+    background: rgba(111, 66, 193, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+  } */
+
+  .bg-purple {
+    /* background-color: #6f42c1; */
+     background-color:	#32127A;  /*Persian Indigo*/
+     /* background-color:			#6A5ACD; */
+    /* background: rgba(111, 66, 193, 0.85); */
+  }
+
+  .navbar-brand img {
+    transition: transform 0.3s ease;
+  }
+
+  .navbar-brand img:hover {
+    transform: scale(1.1);
+  }
+
+  .badge {
+    font-size: 0.7rem;
+    padding: 0.35em 0.5em;
+    border-radius: 50%;
+  }
+
+  /* Ends */

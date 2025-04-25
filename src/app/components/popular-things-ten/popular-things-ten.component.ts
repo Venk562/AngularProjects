@@ -64,8 +64,7 @@ export class PopularThingsTenComponent {
     }
   }
 
-  highlights = `The Mandai Wildlife Reserve is situated in the northern region of Singapore, adjacent to the Upper Seletar Reservoir.
-                This expansive nature and wildlife destination encompasses several renowned attractions, including the Singapore Zoo, Night Safari, River Wonders, Bird Paradise, and Rainforest Wild ASIA.`;
+  highlights = `​Mandai Wildlife Reserve in Singapore is a premier destination for nature and wildlife enthusiasts, comprising five distinct parks: Singapore Zoo, Night Safari, River Wonders, Bird Paradise, and the upcoming Rainforest Wild. Spanning over 126 hectares of lush forest, the reserve offers immersive experiences that showcase diverse ecosystems and animal habitats. Visitors can explore the open-concept Singapore Zoo, encounter nocturnal creatures at the Night Safari, discover freshwater species at River Wonders, and marvel at avian diversity in Bird Paradise. The reserve emphasizes conservation and education, aiming to inspire positive actions for the environment. With the addition of Rainforest Wild and the eco-friendly Mandai Rainforest Resort, Mandai Wildlife Reserve continues to evolve as a leading eco-tourism hub in Asia `;
 
 
   showFullHighlights = false;

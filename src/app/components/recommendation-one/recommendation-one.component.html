@@ -123,37 +123,41 @@
                 <div class="position-relative">
                   <img [src]="item.image" class="card-img-top" [alt]="item.title" loading="lazy">
                   <!-- <i class="bi bi-bookmark position-absolute bottom-0 end-0 m-3 fs-3 text-white"></i> -->
-                  <i class="bi" [ngClass]="isItemSaved(item) ? 'bi-bookmark-fill' : 'bi-bookmark'"
-                    (click)="onBookmarkClick($event, item)" class="position-absolute bottom-0 end-0 m-3 fs-3 text-white"
-                    style="cursor: pointer;"></i>
-                </div>
+                  <div (click)="onBookmarkClick($event, item)" class="position-absolute top-0 end-0 m-3"
+                    style="cursor: pointer;">
+                    <div class="save-icon-wrapper d-flex justify-content-center align-items-center">
+                      <i class="bi heart-icon"
+                        [ngClass]="isItemSaved(item) ? 'bi-heart-fill text-danger' : 'bi-heart text-danger'"></i>
+                    </div>
+                  </div>
 
-                <div class="card-body">
-                  <h5 class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[item.title] ? 'normal' : 'nowrap',
+                  <div class="card-body">
+                    <h5 class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[item.title] ? 'normal' : 'nowrap',
                                      'overflow': showFullTitle[item.title] ? 'visible' : 'hidden',
                                      'text-overflow': showFullTitle[item.title] ? 'unset' : 'ellipsis'}">
-                    {{ item.title }}
-                  </h5>
+                      {{ item.title }}
+                    </h5>
 
-                  <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitleCard(item.title)"
-                    class="btn btn-link text-decoration-none p-0 d-flex justify-content-end">
-                    Read More
-                  </button>
-                  <button *ngIf="showFullTitle[item.title]" (click)="toggleTitleCard(item.title)"
-                    class="btn btn-link text-decoration-none p-0 d-flex justify-content-end">
-                    Read Less
-                  </button>
+                    <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitleCard(item.title)"
+                      class="btn btn-link text-decoration-none p-0 d-flex justify-content-end">
+                      Read More
+                    </button>
+                    <button *ngIf="showFullTitle[item.title]" (click)="toggleTitleCard(item.title)"
+                      class="btn btn-link text-decoration-none p-0 d-flex justify-content-end">
+                      Read Less
+                    </button>
 
-                  <div class="d-flex justify-content-between align-items-center mt-3">
-                    <span class="badge rating-badge d-flex align-items-center">
-                      ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
-                    </span>
-                  </div>
-                  <hr>
+                    <div class="d-flex justify-content-between align-items-center mt-3">
+                      <span class="badge rating-badge d-flex align-items-center">
+                        ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
+                      </span>
+                    </div>
+                    <hr>
 
-                  <div class="d-flex justify-content-start align-items-center mt-2">
-                    <p class="mb-0 text-muted">From</p>
-                    <p class="fw-bold fs-5 ms-2 mb-0">INR {{ item.price }}</p>
+                    <div class="d-flex justify-content-start align-items-center mt-2">
+                      <p class="mb-0 text-muted">From</p>
+                      <p class="fw-bold fs-5 ms-2 mb-0">INR {{ item.price }}</p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -162,8 +166,7 @@
         </div>
       </div>
     </div>
+
+
+
   </div>
-
-
-
-</div>

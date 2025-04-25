@@ -81,8 +81,8 @@
     width: 120%;
 }
 
-.rating-badge {
-    background-color: #5C1AC3; /* Purple background */
+/* .rating-badge {
+    background-color: #5C1AC3;
     color: white;
     padding: 4px 10px;
     border-radius: 8px;
@@ -93,7 +93,7 @@
     min-width: 50px;
     height: 30px;
     font-size: 0.9rem;
-  }
+  } */
 
   .separator-line {
     width: 1px;

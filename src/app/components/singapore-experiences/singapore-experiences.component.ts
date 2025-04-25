@@ -14,7 +14,7 @@ export class SingaporeExperiencesComponent {
 
   popularThings = [
     {
-      id:1,
+      id:5,
       title: 'Universal Studios Singapore',
       image: '/assets/images/Universal Studios Singapore.jpg',
       rating: 4.6,
@@ -24,7 +24,7 @@ export class SingaporeExperiencesComponent {
 
     },
     {
-      id:2,
+      id:6,
       title: 'Gardens By The Bay Tickets',
       image: '/assets/images/Gaderns By The Bay Tickets.jpg',
       rating: 4.7,
@@ -33,7 +33,7 @@ export class SingaporeExperiencesComponent {
        route:'/popular-things-two'
     },
     {
-      id:3,
+      id:7,
       title: 'Harry Poter vissions Of Magic Tickets',
       image: '/assets/images/harry potter visions of magic.jpg',
       rating: 4.2,
@@ -42,7 +42,7 @@ export class SingaporeExperiencesComponent {
       route:'/popular-things-three'
     },
     {
-      id:4,
+      id:8,
       title: 'Night Safari Tickets',
       image: '/assets/images/night safari tickets.jpg',
       rating: 5.0,
@@ -55,7 +55,7 @@ export class SingaporeExperiencesComponent {
 
   popularThingsSecond = [
     {
-      id:1,
+      id:9,
       title: 'Cable Car Singapore Tickets',
       image: '/assets/images/cabel car singapore tickets.jpg',
       rating: 4.6,
@@ -64,7 +64,7 @@ export class SingaporeExperiencesComponent {
       route:'/popular-things-five'
     },
     {
-      id:2,
+      id:10,
       title: 'S.E.A Aquarium Tickets',
       image: '/assets/images/SEA Aquarium Tickets.png',
       rating: 4.7,
@@ -73,7 +73,7 @@ export class SingaporeExperiencesComponent {
       route:'/popular-things-six'
     },
     {
-      id:3,
+      id:11,
       title: 'Singapore Zoo Admission Tickets',
       image: '/assets/images/Singapore Zoo Admission Tickets.jpg',
       rating: 4.2,
@@ -90,7 +90,6 @@ export class SingaporeExperiencesComponent {
       price: 1937,
       route:'/recommendation-one/'
     },
-
   ];
 
   popularThingsThird = [
@@ -104,7 +103,7 @@ export class SingaporeExperiencesComponent {
       route:'/recommendation-three/'
     },
     {
-      id:2,
+      id:12,
       title: 'River Wonders Tickets',
       image: '/assets/images/River Wonders Tickets.jpg',
       rating: 4.7,
@@ -113,16 +112,16 @@ export class SingaporeExperiencesComponent {
       route:'/popular-things-eight/'
     },
     {
-      id:3,
+      id:13,
       title: 'Bird Paradise Tickets',
       image: '/assets/images/Bird Paradise Tickets.jpg',
       rating: 4.2,
       reviews: 581,
       price: 1884,
-      route:'/popular-things-nine/'
+       route:'/popular-things-nine/'
     },
     {
-      id:4,
+      id:14,
       title: 'Manadi Rain Forest Wild Asia Tickets',
       image: '/assets/images/Manadi Rain Forest Wild Asia Tickets.jpg',
       rating: 4.6,

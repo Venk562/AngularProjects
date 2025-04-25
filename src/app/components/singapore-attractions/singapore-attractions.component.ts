@@ -80,7 +80,7 @@ export class SingaporeAttractionsComponent{
       route: '/popular-things-nine'
     },
     {
-      id: 14,
+      id: 15,
       title: 'ArtScience Museum Tickets',
       image: '/assets/images/art-science-museum-singapore-3.avif',
       rating: 4.4,

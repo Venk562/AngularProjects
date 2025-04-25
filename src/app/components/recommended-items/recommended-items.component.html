@@ -45,9 +45,16 @@
               <div class="position-relative">
                 <img [src]="item.image" class="card-img-top" [alt]="item.title" loading="lazy">
                 <!-- <i class="bi bi-bookmark position-absolute bottom-0 end-0 m-3 fs-3 text-white"></i> -->
-                <i class="bi" [ngClass]="isItemSaved(item) ? 'bi-bookmark-fill' : 'bi-bookmark'"
-                  (click)="onBookmarkClick($event, item)" class="position-absolute bottom-0 end-0 m-3 fs-3 text-white"
-                  style="cursor: pointer;"></i>
+                <div (click)="onBookmarkClick($event, item)" class="position-absolute top-0 end-0 m-3"
+                  style="cursor: pointer;">
+                  <div class="save-icon-wrapper d-flex justify-content-center align-items-center">
+                    <i class="bi heart-icon"
+                      [ngClass]="isItemSaved(item) ? 'bi-heart-fill text-danger' : 'bi-heart text-danger'"></i>
+                  </div>
+                </div>
+
+
+
 
               </div>
 
@@ -80,9 +87,9 @@
 
                 <div class="d-flex justify-content-between align-items-center mt-3">
                   <span class="badge rating-badge d-flex align-items-center">
-                    ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
+                      ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
                   </span>
-                </div>
+              </div>
                 <hr>
 
                 <div class="d-flex justify-content-start align-items-center mt-2">
@@ -98,4 +105,6 @@
   </div>
 </div>
 <br><br>
-<div style="padding-left: 100px;padding-right: 100px;"><hr></div>
+<div style="padding-left: 100px;padding-right: 100px;">
+  <hr>
+</div>

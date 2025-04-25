@@ -15,7 +15,7 @@ import { WishlistService } from '../../services/wishlist.service';
 export class PopularThingsEightComponent {
   activity = {
     title: 'River Wonders Tickets',
-    image: '/assets/images/River Wonders Tickets.jpg',
+    image: '/assets/images/River Wonders-4.jpg',
     rating: 4.7,
     reviews: 1250,
     booked: 5000,
@@ -85,7 +85,7 @@ export class PopularThingsEightComponent {
       image: '/assets/images/River Wonders-1.jpg',
     },
     {
-      image: '/assets/images/River Wonders-2.jpg',
+      image: '/assets/images/River Wonders Tickets.jpg',
     },
     {
       image: '/assets/images/River Wonders-3.jpg',

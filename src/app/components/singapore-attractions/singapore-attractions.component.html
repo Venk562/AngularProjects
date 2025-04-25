@@ -2,7 +2,8 @@
   style="background: url('/assets/images/best-singapore-4.jpg') center/cover no-repeat;">
   <div class="overlay" style="background-color: rgba(0,0,0,0.5); padding: 60px 20px;">
     <h1 class="display-4">Explore Attractions in Singapore</h1>
-    <p class="lead text-center fw-bold fs-4">Experience the best of Singapore from iconic landmarks to thrilling adventures and
+    <p class="lead text-center fw-bold fs-4">Experience the best of Singapore from iconic landmarks to thrilling
+      adventures and
       hidden gems.</p>
 
   </div>
@@ -97,69 +98,73 @@
 
   <div class="row">
     <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4" *ngFor="let item of museums">
-      <div [routerLink]="[item.route, item.id]" class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden" style="cursor: pointer;">
+      <div [routerLink]="[item.route, item.id]" class="card h-100 shadow-sm border-0 rounded-4 overflow-hidden"
+        style="cursor: pointer;">
         <div class="position-relative">
           <img [src]="item.image" class="card-img-top" [alt]="item.title" loading="lazy">
           <!-- <i class="bi bi-bookmark position-absolute bottom-0 end-0 m-3 fs-3 text-white"></i> -->
-          <i class="bi" [ngClass]="isItemSaved(item) ? 'bi-bookmark-fill' : 'bi-bookmark'"
-            (click)="onBookmarkClick($event, item)" class="position-absolute bottom-0 end-0 m-3 fs-3 text-white"
-            style="cursor: pointer;"></i>
-        </div>
+          <div (click)="onBookmarkClick($event, item)" class="position-absolute top-0 end-0 m-3"
+            style="cursor: pointer;">
+            <div class="save-icon-wrapper d-flex justify-content-center align-items-center">
+              <i class="bi heart-icon"
+                [ngClass]="isItemSaved(item) ? 'bi-heart-fill text-danger' : 'bi-heart text-danger'"></i>
+            </div>
+          </div>
 
-        <div class="card-body">
-          <h5 class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[item.title] ? 'normal' : 'nowrap',
+          <div class="card-body">
+            <h5 class="card-title fw-bold" [ngStyle]="{'white-space': showFullTitle[item.title] ? 'normal' : 'nowrap',
                              'overflow': showFullTitle[item.title] ? 'visible' : 'hidden',
                              'text-overflow': showFullTitle[item.title] ? 'unset' : 'ellipsis'}">
-            {{ item.title }}
-          </h5>
+              {{ item.title }}
+            </h5>
 
-          <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitleCard(item.title)"
-            class="btn btn-link text-decoration-none p-0 d-flex justify-content-end">
-            Read More
-          </button>
-          <button *ngIf="showFullTitle[item.title]" (click)="toggleTitleCard(item.title)"
-            class="btn btn-link text-decoration-none p-0 d-flex justify-content-end">
-            Read Less
-          </button>
+            <button *ngIf="!showFullTitle[item.title]" (click)="toggleTitleCard(item.title)"
+              class="btn btn-link text-decoration-none p-0 d-flex justify-content-end">
+              Read More
+            </button>
+            <button *ngIf="showFullTitle[item.title]" (click)="toggleTitleCard(item.title)"
+              class="btn btn-link text-decoration-none p-0 d-flex justify-content-end">
+              Read Less
+            </button>
 
-          <div class="d-flex justify-content-between align-items-center mt-3">
-            <span class="badge rating-badge d-flex align-items-center">
-              ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
-            </span>
-          </div>
-          <hr>
+            <div class="d-flex justify-content-between align-items-center mt-3">
+              <span class="badge rating-badge d-flex align-items-center">
+                ⭐ {{ item.rating }} <span class="ms-1">({{ item.reviews }})</span>
+              </span>
+            </div>
+            <hr>
 
-          <div class="d-flex justify-content-start align-items-center mt-2">
-            <p class="mb-0 text-muted">From</p>
-            <p class="fw-bold fs-5 ms-2 mb-0">INR {{ item.price }}</p>
+            <div class="d-flex justify-content-start align-items-center mt-2">
+              <p class="mb-0 text-muted">From</p>
+              <p class="fw-bold fs-5 ms-2 mb-0">INR {{ item.price }}</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<div class="w-100 my-5">
-  <div id="basicCarousel" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div *ngFor="let item of featuredMuseums; let i = index" class="carousel-item" [class.active]="i === 0">
-        <img [src]="item.image" [alt]="item.name" class="d-block w-100 full-carousel-img rounded">
-        <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded px-3 py-2">
-          <h5 class="mb-0">{{ item.name }}</h5>
+  <div class="w-100 my-5">
+    <div id="basicCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div *ngFor="let item of featuredMuseums; let i = index" class="carousel-item" [class.active]="i === 0">
+          <img [src]="item.image" [alt]="item.name" class="d-block w-100 full-carousel-img rounded">
+          <div class="carousel-caption d-none d-md-block bg-dark bg-opacity-50 rounded px-3 py-2">
+            <h5 class="mb-0">{{ item.name }}</h5>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- Controls -->
-    <button class="carousel-control-prev" type="button" data-bs-target="#basicCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"
-        style="background-color: rgba(0, 0, 0, 1); border-radius: 50%; padding: 10px;" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#basicCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"
-        style="background-color: rgba(0, 0, 0, 1); border-radius: 50%; padding: 10px;" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#basicCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"
+          style="background-color: rgba(0, 0, 0, 1); border-radius: 50%; padding: 10px;" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#basicCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"
+          style="background-color: rgba(0, 0, 0, 1); border-radius: 50%; padding: 10px;" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
   </div>
-</div>
